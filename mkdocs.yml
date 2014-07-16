@@ -1,4 +1,6 @@
 site_name: Factor.io Documentation
 theme: yeti
 pages:
-- [index.md, Home]
+- [index.md, Getting Started]
+- [workflows.md, Defining workflows]
+- [build_custom_connectors.md, Build custom connectors]
