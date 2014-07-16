@@ -1,0 +1,4 @@
+site_name: Factor.io Documentation
+theme: yeti
+pages:
+- [index.md, Home]
