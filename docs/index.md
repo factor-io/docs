@@ -5,32 +5,15 @@ This guide gets you started with setting up your server with pre-reqs, install F
 
 Factor.io requires Ruby 1.9.3. If you don't have it already installed, here is how you can get it setup on your local system. This has been tested on Ubuntu and Mac OSX.
 
-### Mac OS
-The first line installs RVM (Ruby Version Manager), which makes it easy to install ruby 1.9.3. The second line installs it and the third sets up the system to use it as the default.
-
-    curl -sSL https://get.rvm.io | sudo bash
-    source /home/ubuntu/.rvm/scripts/rvm
-    rvm install ruby-1.9.3
-    rvm use rvm-1.9.3 --default
-
-### Ubuntu
-Here are the commands you need to run to install/upgrade to ruby 1.9.3 on Ubuntu. This comes from "[Installing Ruby 1.9.3 on Ubuntu 12.04 Precise Pengolin (without RVM)](http://leonard.io/blog/2012/05/installing-ruby-1-9-3-on-ubuntu-12-04-precise-pengolin/)"
-
-    sudo apt-get update
-    sudo apt-get install ruby1.9.1 ruby1.9.1-dev rubygems1.9.1 irb1.9.1 ri1.9.1 rdoc1.9.1 build-essential libopenssl-ruby1.9.1 libssl-dev zlib1g-dev
-    sudo update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby1.9.1 400 --slave /usr/share/man/man1/ruby.1.gz ruby.1.gz /usr/share/man/man1/ruby1.9.1.1.gz --slave /usr/bin/ri ri /usr/bin/ri1.9.1 --slave /usr/bin/irb irb /usr/bin/irb1.9.1 --slave /usr/bin/rdoc rdoc /usr/bin/rdoc1.9.1
-    sudo update-alternatives --config ruby
-    sudo update-alternatives --config gem
-
-
+- Ruby 1.9.3 ([Mac OSX](https://rvm.io/rvm/install), [Ubuntu](http://leonard.io/blog/2012/05/installing-ruby-1-9-3-on-ubuntu-12-04-precise-pengolin/))
+- Bundler (just run `[sudo] gem install bundler`)
 
 ## Download Factor.io CLI tool
 The Factor.io CLI tool (`factor`), is used to run the server and manage your local environment.
 
-    gem install factor --source https://XXXXX@gem.fury.io/skierkowski/
-    factor login
+    gem install factor
 
-## First sample workflow
+## First worklow
 Now we are going to create a basic "Hello World" workflow. This workflow will deploy a basic hello world application from Github to Heroku when you push new code to the master branch in Github.
 
 ### Create sample application
