@@ -1,4 +1,4 @@
-site_name: Factor.io Documentation
+site_name: Factor.io Docs
 theme: yeti
 pages:
 - [index.md, Getting Started]
