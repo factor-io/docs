@@ -1,8 +1,9 @@
-language: node_js
-node_js:
-- '0.10'
+language: python
+ptyhon:
+  - "2.7"
+install:
+  - pip install mkdocs
 script:
-  - npm install mkdocs
   - mkdocs build
   - cd site
 deploy:
