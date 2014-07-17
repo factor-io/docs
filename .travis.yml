@@ -1,14 +1,18 @@
 language: python
 ptyhon:
   - "2.7"
+branches:
+  only:
+    - master
 install:
   - pip install mkdocs
 script:
   - mkdocs build
-  - cd site
 deploy:
   provider: s3
   access_key_id: AKIAINGWPC5AK4TBL4FA
   secret_access_key:
     secure: JJ2jyrBJMkYSsZ47Eaax3uiLZKBrABQeDwWNfQ9lvrI5+D4CyouDk6GOCwGEmUHiHchVC54sS0NwBHQl18PAuvupRsIo/w3nm3KjLBP335Hq1Px+p+bjbcmpaBbAkW47mOssDeqHKB4d8O3ap6789R8o6jjqDkAi1Hac/L7WPAc=
   bucket: docs.factor.io
+  skip_cleanup: true
+  local-dir: site
