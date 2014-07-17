@@ -5,3 +5,4 @@ pages:
 - [workflows.md, Defining workflows]
 - [build_custom_connectors.md, Build custom connectors]
 - [examples.md, Examples]
+- [production.md, Run in production]
