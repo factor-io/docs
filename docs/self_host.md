@@ -21,13 +21,13 @@ When you restart your server, Factor.io will start automatically. However, to st
     sudo start factor
 
 
-## Running from command line
+## Running from the command line
 The [Foreman gem](https://github.com/ddollar/foreman) is a generic process manager which uses a Procfile to run and manage multiple process. To start foreman just run...
 
     cd example-workflows
     foreman start
 
-### Running on Heroku
+## Running on Heroku
 Heroku uses Foreman and Procfiles under the hood, so other than having the Procfile in your directory there isn't much you need to do.
 
     cd example-workflows
