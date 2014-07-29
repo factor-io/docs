@@ -3,7 +3,7 @@ theme: yeti
 pages:
 - [index.md, Getting Started]
 - [workflows.md, Defining workflows]
-- [build_custom_connectors.md, Build custom connectors]
 - [examples.md, Examples]
-- [self_host.md, Self hosting]
 - [connectors.md, Connectors]
+- [self_host.md, Self hosting]
+- [build_custom_connectors.md, Build custom connectors]
