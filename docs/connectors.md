@@ -3,14 +3,6 @@
 
 ## Deploy action
 
-# BitBucket
-
-## Push listener
-
-# Cloud Foundry
-
-## Deploy action
-
 # Github
 
 ## Push listener
@@ -78,10 +70,6 @@
 ## Room Topic Change Listener
 
 ## Send Message Action
-
-# Middleman
-
-## Middleman Build Action
 
 # Pushover
 

@@ -2,6 +2,7 @@
 This guide gets you started with setting up your server with pre-reqs, install Factor.io server, creating your first workflow, and starting the server in the background.
 
 ## Prereqs
+
 - Ruby 1.9.3+ ([Mac OSX](https://rvm.io/rvm/install), [Ubuntu](http://leonard.io/blog/2012/05/installing-ruby-1-9-3-on-ubuntu-12-04-precise-pengolin/))
 - Bundler (`[sudo] gem install bundler`)
 
