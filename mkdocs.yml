@@ -1,5 +1,6 @@
 site_name: Factor.io Docs
-theme: yeti
+theme: readthedocs
+repo_url: https://github.com/factor-io/docs/
 pages:
 - [index.md, Getting Started]
 - [workflows.md, Defining workflows]
