@@ -9,7 +9,7 @@ This workflow registers a web-hook with Github for listening for all 'push' even
     end
 
 
-## Cron job
+## Basic distributed cron
 This workflow runs every 2 hours (120 minutes) and simply executs `pwd` and `ls` on `sandbox.factor.io`. You need to setup SSH credentials in your credentials.yml file.
 
     listen 'timer', 'every', minutes:120 do |timer_info|
