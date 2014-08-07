@@ -17,3 +17,12 @@ This workflow runs every 2 hours (120 minutes) and simply executs `pwd` and `ls`
         info "Path is: #{exec_info['commands'][0]['all']}"
       end
     end
+
+## Rerun deployment on Travis-ci
+This workflow runs every 2 hours (120 minutes) and simply executs `pwd` and `ls` on `sandbox.factor.io`. You need to setup SSH credentials in your credentials.yml file.
+
+    listen 'timer', 'every', minutes:120 do |timer_info|
+      run 'travis', 'redeploy', repo:'factor-io/factor' do |build_info|
+        info "Rebuilding #{build_info['number']}"
+      end
+    end
