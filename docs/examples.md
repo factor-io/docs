@@ -65,3 +65,18 @@ This is another user example. Whenver one of the engineers writes "FIRE MISSILES
         success "Deployed app to live.sandbox.factor.io"
       end
     end
+
+## Build and Deploy a static Middleman site with Github, SSH, Bitballoon
+This waits for a `git push` on Github, then it will upload, compile, and download the application on an SSH server. Once done, it will upload the compiled bits to BitBalloon.
+
+
+    listen 'github::push', repo:'skierkowski/hello' do |repo_info|
+      host = 'ubuntu@sandbox.factor.io'
+      run 'ssh::upload', content:repo_info.content, path:'~/web', host:host
+        run 'ssh::execute', commands:['middleman build ~/web'], host:host do |build_info|
+          run 'ssh::download', path:'~/web/build', host:host do |download_info|
+            run 'bitballoon::deploy', site:'foo.com', content:download_info.content
+          end
+        end
+      end
+    end
