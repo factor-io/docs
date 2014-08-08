@@ -57,8 +57,8 @@ This is a real scenario from one of our customers. Whenever they push new code t
     end
 
 
-## Hipchat deploy bot
-This is another user example. Whenver one of the engineers writes "FIRE MISSILES" in their hipchat room this workflow will run a script on a server which handles the deployment. (We've removed the user identity info).
+## Hipchat Deploy Bot
+This is another user example. Whenver one of the engineers writes "FIRE MISSILES" in their hipchat room this workflow will run a script on a server which handles the deployment. (We've removed the user identity info). If you want to use a real bot check out [Hubot](https://hubot.github.com/).
 
     listen 'hipchat::send_message', room:'Engineering', filter:'FIRE MISSILES'
       run 'ssh::execute', commands:['sudo /opt/dio/sbin/make.sh'], host:'ubuntu@live.sandbox.factor.io' do
