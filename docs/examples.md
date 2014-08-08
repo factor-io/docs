@@ -41,3 +41,27 @@ If you are familiar with [DeployHQ](https://www.deployhq.com/) you'll know it is
     listen 'github::push', repo:'skierkowski/hello#master' do |github_info|
       run 'ssh:upload', host:'ubuntu@sandbox.factor.io', content: github_info.content, path:'/home/ubuntu/web'
     end
+
+
+## Triger SSH command on github push
+This is a real scenario from one of our customers. Whenever they push new code to a repo in github they want Factor.io to connect to a server and run a shell script. This shell script handles the deployment of the application (as well as rollbacks if needed). Once it is done, it sends a notification via Pushover. We've removed the identity of the customer and replaced it with dummy data.
+
+    listen 'github::push', repo:'skierkowski/hello' do |github_info|
+      commands = []
+      commands << 'cd ~/workspace/'
+      commands << 'git pull origin master'
+      commands << 'mg restart app'
+      run 'ssh::execute', commands:commands, host:'ec2-user@sandbox.factor.io' do |ssh_info|
+        run 'pushover::notify', message:'Successfully deployed WH website'
+      end
+    end
+
+
+## Hipchat deploy bot
+This is another user example. Whenver one of the engineers writes "FIRE MISSILES" in their hipchat room this workflow will run a script on a server which handles the deployment. (We've removed the user identity info).
+
+    listen 'hipchat::send_message', room:'Engineering', filter:'FIRE MISSILES'
+      run 'ssh::execute', commands:['sudo /opt/dio/sbin/make.sh'], host:'ubuntu@live.sandbox.factor.io' do
+        success "Deployed app to live.sandbox.factor.io"
+      end
+    end
