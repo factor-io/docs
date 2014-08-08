@@ -4,9 +4,17 @@ site_author: Factor.io
 theme_dir: theme
 repo_url: https://github.com/factor-io/docs/
 pages:
-- [index.md, Getting Started]
-- [workflows.md, Defining workflows]
-- [examples.md, Examples]
-- [connectors.md, Connectors]
-- [self_host.md, Self hosting]
-- [build_custom_connectors.md, Build custom connectors]
+- ['index.md', 'Getting Started']
+- ['workflows.md', 'Defining workflows']
+- ['examples.md', 'Examples']
+- ['connectors/bitballoon.md', 'Connectors', 'Bitballoon']
+- ['connectors/github.md', 'Connectors', 'Github']
+- ['connectors/heroku.md', 'Connectors', 'Heroku']
+- ['connectors/hipchat.md', 'Connectors', 'Hipchat']
+- ['connectors/pushover.md', 'Connectors', 'Pushover']
+- ['connectors/ssh.md', 'Connectors', 'SSH']
+- ['connectors/timer.md', 'Connectors', 'Timer']
+- ['connectors/travis.md', 'Connectors', 'Travis']
+- ['connectors/web.md', 'Connectors', 'Web']
+- ['self_host.md', 'Self hosting']
+- ['build_custom_connectors.md', 'Build custom connectors']
