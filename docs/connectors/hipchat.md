@@ -1,13 +1,29 @@
 # Hipchat
 
-## Credentials
-- **api_key**
+## Authentication
+Hipchat requires a personal API Key. This key can be found under Account Settings > API Access when you login to your account. You need to get the API Key from the page and place it in your credentials.yml file.
+
+**Note**: Hipchat also has Group API Keys under the Group Admin section of admin account, this is not the right key.
+
+**credentials.yml**
+    hipchat:
+      api_key: 
+
 
 ## Room Message Listener
-- **room**
-- **filter**
+The Room Message Listener (`hipchat::send_message`) listens for when someone posts a new message to a room. The filter parameter filters the messages only for ones that match the regular expression.
 
-### Response
+### Params
+- **room** (required): the name of the room wher eyou want to listen for messages
+- **filter** (required): A regular expression filter of the messages you want to get. This also supports matching.
+
+### Example
+    listen 'hipchat::send_message', room:'Factor', filter:'ping (.*)' do |message|
+      run 'hipchat::send', room:'Factor', message: "pong #{message.matches[0]}"
+    end
+
+
+### Response example
     {
       "event" => "room_message",
       "oauth_client_id" => "69563cb5-057d-4e9d-a9db-d1bc458170a1",
