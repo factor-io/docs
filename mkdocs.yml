@@ -1,5 +1,7 @@
 site_name: Factor.io Docs
-theme: readthedocs
+site_url: http://docs.factor.io/
+site_author: Factor.io
+theme_dir: theme
 repo_url: https://github.com/factor-io/docs/
 pages:
 - [index.md, Getting Started]
