@@ -5,8 +5,8 @@ The Factor.io workflow is Ruby code, but don't worry if you aren't a Rubyist. Th
 ## Listen for events
 Let's have a look at this example:
 
-    listen 'github::push', branch:'qa-ready', repo:'console', username:'factor-io' do |repo|
-      puts "\#{repo.commiter.email']} just pushed code to console/aq-ready"
+    listen 'github::push', repo:'factor-io/console#qa-branch' do |repo_info|
+      puts "\#{repo_info.commiter.email']} just pushed code to console/aq-ready"
     end
 
 First we start with `listen`. This creates a new block to listen for a particular event. When this event occurs, the inside block gets executed. The first two parameters specify the service and event name (e.g. github/push). This is followed by key value pairs which are input parameters for that listener. Some parameters are required some are optional, they are all documented for each of the services. Lastly we see `do |repo_info|`. This sends the output of the event to the parameter `repo_info`. We can use repo_info in the inside block. This parameter is a hash containing data about the particular event, this hash is also documented for each particular service.
@@ -14,10 +14,10 @@ First we start with `listen`. This creates a new block to listen for a particula
 ## Run action
 Let's have a look at this example:
 
-    listen 'github::push', branch:'qa-ready', repo:'console', username:'factor-io' do |repo|
+    listen 'github::push', repo:'factor-io/console#qa-branch' do |repo_info|
       run 'heroku::deploy', content:repo.content, app:'hello-world' do |deploy|
-        run 'hipchat::send', room:'Factor', message:"Just deployed \#{deploy.version}"
-        run 'gmail::send', subject:'Factor Deploy', message:"Just deployed \#{deploy.version}"
+        run 'hipchat::send', room:'Factor', message:"Just deployed #{deploy.version}"
+        run 'gmail::send', subject:'Factor Deploy', message:"Just deployed #{deploy.version}", to:'eng@factor.io'
       end
     end
 
@@ -31,7 +31,7 @@ Creating an inside block is optional. In this example we run `run 'heroku','depl
 ## Error handling and logic
 Lets look here:
 
-    listen 'github::push', branch:'qa-ready', repo:'console', username:'factor-io' do |repo_info|
+    listen 'github::push', repo:'factor-io/console#qa-branch' do |repo_info|
       run 'rspec::test', content:repo_info.content do |spec|
         if spec.stats == 'passed'
           call 'hipchat::send', room:'Factor', message:'console/qa-ready tests passed, ready to deploy'
@@ -47,7 +47,7 @@ Since this is Ruby code we can use operations like `if`,`else`, etc. In this exa
 When you run a workflow you can see the logs for the workflow. As a part of your workflow you can also post your own messages to the log. You can use `info` (white), `warn` (orange), `success` (green), and `error` (red) in your code followed by the message to send the message to the logs. 
 
 
-    listen 'github……push', branch:'qa-ready', repo:'console', username:'factor-io' do |repo_info|
+    listen 'github::push', repo:'factor-io/console#qa-branch' do |repo_info|
       info "A Github Push just occured. This will be white"
       warn "Something went wrong, but not horribly wrong. This will be orange."
       error "Something got screwed up here. This will be red."
