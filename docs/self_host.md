@@ -33,3 +33,9 @@ Heroku uses Foreman and Procfiles under the hood, so other than having the Procf
     cd example-workflows
     heroku create
     git push heroku
+
+In the example directory you will see a `Procfil` which this contents. This tells Heroku to run `bundle exec factor s` and name the process `factor`.
+
+    factor: bundle exec factor s
+
+**Note**: this line could be `factor: factor s`. However, Heroku has another CLI called `factor` that conflicts with this gem; using `bundle exec...` forces the use of the gem.
