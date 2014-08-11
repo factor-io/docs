@@ -6,8 +6,9 @@ Hipchat requires a personal API Key. This key can be found under Account Setting
 **Note**: Hipchat also has Group API Keys under the Group Admin section of admin account, this is not the right key.
 
 **credentials.yml**
+
     hipchat:
-      api_key: 
+      api_key: b1488574a768a8a
 
 
 ## Message Listener

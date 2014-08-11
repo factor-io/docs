@@ -4,6 +4,7 @@ The SSH Connector enables you to execute commands on an SSH server or upload fil
 ## Authetication
 The SSH commands currently support authentication by SSH Keys only, no U/P support. While the remote server has your public key to validate your authenticitity, the SSH client requires the private key. As such, you need to paste in your pirvate SSH key into the credentials.yml file. In YML you will need to put the "|" character follwing the ":" and a space in between. Thereafter you can put in the multi-line SSH private key indented one tab (two spaces).
 
+**credentials.yml**
 
     ssh:
       private_key: |

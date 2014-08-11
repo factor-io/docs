@@ -7,6 +7,7 @@ Authentication can be achieve with either an access token or a github token.
 - **github_token**: Instead of a Travis token you can also use a Github token which you can obtain from Account Settings > Applications > Personal access token
 
 **credentials.yml**
+
     travis:
       access_token: wwhtBp58xbM88sBdwHnRfg
 
