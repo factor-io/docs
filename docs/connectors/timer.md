@@ -11,7 +11,7 @@ The Cron Listener (`timer::cron`) is used to execute a task on a schedule as def
 - **time_run**: the time the task was triggered.
 
 ### Example
-    listen 'timer', 'cron', crontab:'*/30 * * * * *' do |timer_info|
+    listen 'timer::cron', crontab:'*/30 * * * * *' do |timer_info|
       info "This workflow rus every 30 seconds, this time it ran at #{timer_info['time_run']}"
     end
 
@@ -29,7 +29,7 @@ You are required to pass in exactly one of these values, [no more no less](https
 - **time_run**: the time the task was triggered.
 
 ### Example
-    listen 'timer', 'every', minutes:3 do |timer_info|
+    listen 'timer::every', minutes:3 do |timer_info|
       info "This workflow ran at #{timer_info.time_run}"
     end
 
