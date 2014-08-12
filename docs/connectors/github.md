@@ -34,7 +34,7 @@ The Create Listener (`github::create`) listeners for the creation of new branche
     end
 
 ## Delete Listener
-The Delete Listener (`github::create`) listeners for the deleting of new branches, or tags. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#deleteevent).
+The Delete Listener (`github::delete`) listeners for the deleting of new branches, or tags. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#deleteevent).
 
 ### Example
     listen 'github::delete', repo:'skierkowski/hello' do |delete_event|
