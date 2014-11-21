@@ -2,6 +2,7 @@
 /* Prettyify */
 $( document ).ready(function() {
     prettyPrint();
+    $('table').addClass('table');
 });
 
 
