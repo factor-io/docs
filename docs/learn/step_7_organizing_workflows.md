@@ -2,5 +2,5 @@
 
 
 
-### [Next: Run your own connectors](/learn/step_8_run_your_own_connector)
-#### [Previous: Handling failures](/learn/step_6_handling_failures)
+### [Next: What's Next?](learn/step_8_whats_next)
+#### [Previous: Handling failures](learn/step_6_handling_failures)

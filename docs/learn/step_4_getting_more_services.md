@@ -45,5 +45,5 @@ factor registroy connectors
 ```
 
 
-### [Next: Automating deployment](/learn/step_5_auto_deploy)
-#### [Previous: Your first workflow](/learn/step_3_your_first_workflow)
+### [Next: Automating deployment](learn/step_5_auto_deploy)
+#### [Previous: Your first workflow](learn/step_3_your_first_workflow)

@@ -22,4 +22,4 @@ rvm use ruby-2.1.3
 [sudo] gem install factor
 ```
 
-### [Next: Your first workflow](/learn/step_2_your_first_command)
+### [Next: Your first workflow](learn/step_2_your_first_command)

@@ -60,5 +60,5 @@ factor run myconnector::webstuff::post '{"url":"http://requestb.in/1h15g3i1"}'
 ```
 
 
-### [Next: Your first workflow](/learn/step_3_your_first_workflow)
-#### [Previous: Before you start](/learn/step_1_before_you_start)
+### [Next: Your first workflow](learn/step_3_your_first_workflow)
+#### [Previous: Before you start](learn/step_1_before_you_start)
