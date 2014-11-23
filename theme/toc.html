@@ -1,10 +1,38 @@
-<div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    {% for toc_item in toc %}
-        <li class="main {% if toc_item.active %}active{% endif %}"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
-        {% for toc_item in toc_item.children %}
-            <li><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
-        {% endfor %}
-    {% endfor %}
-    </ul>
+<style>
+#nav_header{
+
+
+}
+#nav_header > .title{
+    font-weight: bold;
+    color: #373737;
+    margin-top: 10px;
+}
+
+#nav_header > a {
+    /*font-weight: bold;*/
+    color: #888;
+    text-decoration: none;
+    margin: 10px 10px;
+    line-height: 25px;
+}
+
+#nav_header > a.active {
+    
+    color: #222;
+}
+</style>
+
+
+<div id="nav_header">
+  {% for nav_item in nav %}
+    {% if nav_item.children %}
+      <div class='title'>{{nav_item.title}}</div>
+      {% for nav_child in nav_item.children %}
+        <a href="{{ nav_child.url }}" {% if nav_child.active %}class='active'{%endif%}>{{nav_child.title}}</a><br/>
+      {% endfor %}
+    {% else %}
+      <div class='title'><a href="{{ nav_item.url }}">{{nav_item.title}}</a></div>
+    {% endif %}
+  {% endfor %}
 </div>
