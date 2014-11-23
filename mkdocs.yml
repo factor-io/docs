@@ -12,7 +12,7 @@ pages:
 - ['learn/step_5_auto_deploy.md', 'Learn Factor.io', '5. Automating deployments']
 - ['learn/step_6_handling_failures.md', 'Learn Factor.io', '6. Handling failures']
 - ['learn/step_7_organizing_workflows.md', 'Learn Factor.io', '7. Organizing workflows']
-- ['learn/step_8_run_your_own_connector.md', 'Learn Factor.io', '8. Run your own connector service']
+- ['learn/step_8_whats_next.md', 'Learn Factor.io', "8. What's Next?"]
 - ['pro/overview.md', 'Factor.io Pro', 'Overview']
 - ['pro/workflows.md', 'Factor.io Pro', 'Creating and running Workflows']
 - ['pro/credentials.md', 'Factor.io Pro', 'Setting Credentials']
