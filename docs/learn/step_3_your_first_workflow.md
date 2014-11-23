@@ -1,4 +1,3 @@
-# Step 3: Your first workflow
 In previous steps we ran commands from the command line. However, in most cases you will want to execute a number of actions and listen for events. To do this, we will now create our first workflow.
 
 

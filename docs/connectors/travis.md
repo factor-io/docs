@@ -1,5 +1,3 @@
-# Travis
-
 ## Authentication
 Authentication can be achieve with either an access token or a github token. 
 
@@ -33,9 +31,10 @@ The Rebuild Action (`travis::rebuild`) can be used to re-run a recent build.
 - **job_ids**: Job IDs for the build
 
 ### Example
-    listen 'timer::every', minutes:60 do |timer_info|
-      run 'travis::rebuild', repo:'skierkowski/hello' do |build|
-        info "Restarting build # #{build.number} for repo #{build.id}"
-      end
-    end
-
+```ruby
+listen 'timer::every', minutes:60 do |timer_info|
+  run 'travis::rebuild', repo:'skierkowski/hello' do |build|
+    info "Restarting build # #{build.number} for repo #{build.id}"
+  end
+end
+```

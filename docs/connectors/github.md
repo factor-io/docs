@@ -1,5 +1,3 @@
-# Github
-
 ## Authentication
 Github requires an API Key (api_key) to be defined in your credentials.yml file. To get the API key go to your [Application Settings page in Github](https://github.com/settings/applications) and use the "Generate new token" button in the Personal access tokens section to generate a new token. Copy the new key and paste it into your credentials.yml file.
 

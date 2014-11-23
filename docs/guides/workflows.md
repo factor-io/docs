@@ -1,4 +1,3 @@
-# Factor.io Workflow Syntax
 The Factor.io workflow is Ruby code, but don't worry if you aren't a Rubyist. The Factor.io Workflows are defined using a Ruby Domain Specific Language. While you can use Ruby code, it only requires very basic syntax to create a workflow.
 
 

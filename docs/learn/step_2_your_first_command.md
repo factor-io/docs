@@ -1,5 +1,3 @@
-# Step 2: Your first command
-
 Let's create our working directory, `workflows`, and we'll add one file `connectors.yml`.
 ```shell
 mkdir /workflows

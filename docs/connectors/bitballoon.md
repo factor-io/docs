@@ -1,4 +1,3 @@
-# BitBalloon
 [BitBalloon](https://www.bitballoon.com/) is a static site hosting service. Factor.io provides a way to deploy static files to your site hosted on BitBalloon.
 
 ## Authentication

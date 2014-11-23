@@ -1,5 +1,3 @@
-# Heroku
-
 ## Authentication
 Github requires an API Key (api_key) to be defined in your credentials.yml file. To get the API key go to your [Account Page in Heroku](https://dashboard.heroku.com/account) and generate an "API Key". Copy the new key and paste it into your credentials.yml file.
 

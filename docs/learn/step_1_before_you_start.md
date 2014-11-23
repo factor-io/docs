@@ -1,5 +1,3 @@
-# Step 1: Before you start
-
 This guide walks you through the most basic Factor.io setup and progress to more advanced topics and concepts.
 
 Before you start you will need some prerequisites.

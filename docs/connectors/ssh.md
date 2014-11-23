@@ -1,4 +1,3 @@
-# SSH
 The SSH Connector enables you to execute commands on an SSH server or upload files via SCP.
 
 ## Authetication

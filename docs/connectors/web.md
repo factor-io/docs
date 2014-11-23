@@ -1,4 +1,3 @@
-# Web
 This connector enables you to create webhooks and call web services using POST, GET, PUT, DELETE HTTP Actions.
 
 ## Post listener (webhook)

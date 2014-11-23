@@ -1,4 +1,3 @@
-# Self hosting Factor.io
 While it is easy to run a Factor Server, you will want to use a process manager to run the server in production. The process manager ensures that Factor.io will continue to run even in case of an unexepcted crash or system reboot.
 
 ## Running on Ubuntu with Upstart

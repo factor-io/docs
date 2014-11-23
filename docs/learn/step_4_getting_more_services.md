@@ -1,4 +1,3 @@
-# Step 4: Getting more services
 Now that we've built a basic workflow, lets do something more useful and integrate with some third party services.
 
 ## Add Heroku and Github Connectors

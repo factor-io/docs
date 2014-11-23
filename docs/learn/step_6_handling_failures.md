@@ -1,4 +1,3 @@
-# Step 6: Handling failures
 
 ```ruby
 listen 'github::push', repo:'skierkowski/hello' do |repo|

@@ -1,4 +1,3 @@
-# Step 5: Automate deployments
 
 ```ruby
 listen 'github::push', repo:'skierkowski/hello' do |repo|
