@@ -41,3 +41,4 @@ pages:
 - ['guides/build_custom_connectors.md', 'Guides', 'Build custom connectors']
 - ['guides/workflows.md', 'Guides', 'Defining workflows']
 - ['guides/examples.md', 'Guides', 'Workflow Examples']
+- ['guides/running_connector_service.md', 'Guides', 'Running Connector Service']
