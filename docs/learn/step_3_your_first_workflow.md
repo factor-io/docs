@@ -85,5 +85,5 @@ When you run this command, you should see output like this.
 
 Based on the workflow definition, the last 7 lines will be logged over and over again every minute.
 
-### [Next: Your first workflow](learn/step_4_getting_more_services)
+### [Next: Getting more services](learn/step_4_getting_more_services)
 #### [Previous: Before you start](learn/step_2_your_first_command)
