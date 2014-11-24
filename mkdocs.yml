@@ -21,7 +21,6 @@ pages:
 - ['pro/jumpstarts.md', 'Factor.io Pro', 'Managing Jumpstarts']
 - ['connectors/bitballoon.md', 'Connectors', 'Bitballoon']
 - ['connectors/chef.md', 'Connectors', 'Chef']
-- ['connectors/ftp.md', 'Connectors', 'FTP']
 - ['connectors/github.md', 'Connectors', 'Github']
 - ['connectors/heroku.md', 'Connectors', 'Heroku']
 - ['connectors/hipchat.md', 'Connectors', 'Hipchat']
