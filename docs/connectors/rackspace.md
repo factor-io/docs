@@ -646,46 +646,24 @@ end
 # rackspace::loadbalancer::list
 
 ## Input
-- **region** (optional, default:'ord'): A string containing the three letter region
+ID | default | Description
+-- | -------- | -----------
+region | 'ord' | A string containing the three letter region
 
 ## Output
 ```ruby
 [
-  {
-    :name=>"1345", 
-    :id=>54575, 
-    :protocol=>"HTTP", 
-    :port=>80, 
-    :algorithm=>"WEIGHTED_LEAST_CONNECTIONS", 
-    :state=>"ACTIVE", 
-    :timeout=>30, 
-    :created=>
-  {
-    "time"=>"2014-11-04T16:00:31Z"
-  }, 
-    :updated=>
-  {
-    "time"=>"2014-11-04T16:02:36Z"
-  }, 
-    "nodeCount"=>0
-  }, 
-  {
-    :name=>"test_balancer", 
-    :id=>54577, 
-    :protocol=>"HTTP", 
-    :port=>80, 
-    :algorithm=>"LEAST_CONNECTIONS", 
-    :state=>"ACTIVE", 
-    :timeout=>30, 
-    :created=>
-  {
-    "time"=>"2014-11-04T16:00:50Z"
-  }, 
-    :updated=>
-  {
-    "time"=>"2014-11-04T16:02:50Z"
-  }, 
-    "nodeCount"=>0
+ {
+   "name": "console",
+   "id": 356337,
+    "protocol": "HTTP",
+    "port": 80,
+    "algorithm": "RANDOM",
+    "state": "ACTIVE",
+    "timeout": 30,
+    "created": "",
+    "updated": "",
+    "nodeCount": 1
   }
 ]
 ```
@@ -693,25 +671,119 @@ end
 # rackspace::loadbalancer::get
 
 ## Input
-- **region** (optional, default:'ord'): A string containing the three letter region
-- **load_balancer_id** (required): The loadbalancer ID.
+ID | default | Description
+-- | -------- | -----------
+region | 'ord' | A string containing the three letter region
+id | false | The Load Balancer ID
 
 ## Output
 ```ruby
-
-ruby
-
+{
+  "name": "console",
+  "id": 356337,
+  "protocol": "HTTP",
+  "port": 80,
+  "algorithm": "RANDOM",
+  "status": "ACTIVE",
+  "cluster": "",
+  "nodes": [
+    {
+      "address": "10.182.130.27",
+      "id": 724921,
+      "type": "PRIMARY",
+      "port": 80,
+      "status": "ONLINE",
+      "condition": "ENABLED"
+    }
+  ],
+  "timeout": 30,
+  "created": "",
+  "sslTermination": "",
+  "virtualIps": [
+    {
+      "address": "104.130.251.13",
+      "id": 14967,
+      "type": "PUBLIC",
+      "ipVersion": "IPV4"
+    },
+    {
+      "address": "2001:4800:7901:0000:49a2:e546:0000:0001",
+      "id": 9277477,
+      "type": "PUBLIC",
+      "ipVersion": "IPV6"
+    }
+  ],
+  "sourceAddresses": "",
+  "httpsRedirect": false,
+  "updated": "",
+  "halfClosed": false,
+  "connectionLogging": "",
+  "contentCaching": ""
+}
 ```
 
 # rackspace::loadbalancer::delete
 
 ## Input
-- **region** (optional, default:'ord'): A string containing the three letter region
-- **id** (required): The loadbalancer ID.
+ID | default | Description
+-- | -------- | -----------
+region | 'ord' | A string containing the three letter region
+id | false | The Load Balancer ID
+
+
+# rackspace::loadbalancer::create
+
+## Input
+ID | default | Description
+-- | -------- | -----------
+region | 'ord' | A string containing the three letter region
+id |  | The Load Balancer ID
+name | | Name of the load balancer
+protocol | 'HTTP' | The incoming protocol to use.
+port | 80 | The TCP/IP Port to open for incoming connections
+ip_type | 'PUBLIC' | Virtual IP Type. When your resources reside in the same region as your load balancer, devices are in close proximity to each other and can elect to take advantage of ServiceNet connectivity (by specifying 'SERVICENET') for free data transfer between services if desired.
+algorithm | 'RANDOM' | Algorithm to use for route distribution.
+wait | false | Should the call wait until the load balancer is created (or failed), or continue the workflow while this executes async. If subsequent code depends on this being live, then use 'true'.
+
+
+# rackspace::loadbalancer::add_node
+## Input
+ID | default | Description
+-- | -------- | -----------
+region | 'ord' | A string containing the three letter region
+id |  | The Load Balancer ID
+address |  | The host address, no port, scheme, or path
+port | 80 | The TCP/IP Port to use
+condition | 'ENABLED' | State of the node. Likely want to keep the default here.
+
+# rackspace::loadbalancer::remove_node
+## Input
+ID | default | Description
+-- | -------- | -----------
+region | 'ord' | A string containing the three letter region
+load_balancer_id |  | The Load Balancer ID
+id |  | Node ID
+
+
+# rackspace::loadbalancer::nodes
+
+## Input
+ID | default | Description
+-- | -------- | -----------
+region | 'ord' | A string containing the three letter region
+id |  | The Load Balancer ID
 
 ## Output
+
 ```ruby
-
-ruby
-
+[
+  {
+    "address": "10.182.130.27",
+    "id": 724921,
+    "type": "PRIMARY",
+    "port": 80,
+    "status": "ONLINE",
+    "condition": "ENABLED"
+  }
+]
 ```
