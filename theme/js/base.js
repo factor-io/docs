@@ -4,7 +4,7 @@ $( document ).ready(function() {
     prettyPrint();
     $('table').addClass('table').addClass('table-bordered');
     console.log($('#toc'));
-    $('#toc').tocify({showAndHide:false,showEffect:'show',showAndHideOnScroll:false, highlightOnScroll:false,selectors:'h2,h3',theme:'none',highlightDefault:false});
+    $('#toc').tocify({selector:'div[role=main]',showAndHide:false,showEffect:'show',showAndHideOnScroll:false, highlightOnScroll:false,selectors:'h1',theme:'none',highlightDefault:false});
 
 });
 

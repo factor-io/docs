@@ -13,12 +13,19 @@
         <title>{{ page_title }}</title>
 
         <style>
-            .table{
-                background-color: #FFF;
+            div[role=main] > h1 {
+                color: #3dac85;
+            }
+            div[role=main] > h2 {
+                color: #444;
+                font-size: 26px;
             }
 
-            #toc > #tocify-header0{
-                display: none;
+            div[role=main] > p, li {
+                color: #666;
+            }
+            .table{
+                background-color: #FFF;
             }
 
             #toc > .tocify-header{
