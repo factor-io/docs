@@ -3,7 +3,6 @@
 $( document ).ready(function() {
     prettyPrint();
     $('table').addClass('table').addClass('table-bordered');
-    console.log($('#toc'));
     $('#toc').tocify({selector:'div[role=main]',showAndHide:false,showEffect:'show',showAndHideOnScroll:false, highlightOnScroll:false,selectors:'h1',theme:'none',highlightDefault:false});
 
 });
