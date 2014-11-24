@@ -1,6 +1,6 @@
 This Chef Connector enables you to bootstrap a server using both Chef Server and Hosted Chef, but not Chef Solo.
 
-## Authentication
+# Authentication
 ID | Default | Description
 -- | ------- | -----------
 private_key | false | The Private Key chef needs to SSH into the remote server
@@ -45,9 +45,9 @@ chef:
     -----END RSA PRIVATE KEY-----
 ```
 
-## chef::bootstrap
+# chef::bootstrap
 
-### Input parameters
+## Input parameters
 ID | Default | Description
 -- | ------- | -----------
 host | false | The host address for the server to bootstrap, including the username (e.g. `ubuntu@10.03.221.02`)
@@ -55,7 +55,7 @@ runlist | false | The Chef runlist for bootstrapping. e.g. `role[console]`
 name | false | The name of the server as it will be captured on the chef server
 environment | _default | The environment you'd like to use for this server (e.g. `production`)
 
-### Output
+## Output
 The output is rather uneventfull. The logs show all the details of the procedure, but the output only shows `{output:'complete'}` upon completion.
 ```json
 {
@@ -63,7 +63,7 @@ The output is rather uneventfull. The logs show all the details of the procedure
 }
 ```
 
-### Example
+## Example
 
 ```ruby
 listen 'web::hook', id:'provision' do |post_options|
