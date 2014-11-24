@@ -12,6 +12,39 @@
 
         <title>{{ page_title }}</title>
 
+        <style>
+            .table{
+                background-color: #FFF;
+            }
+
+            #toc > #tocify-header0{
+                display: none;
+            }
+
+            #toc > .tocify-header{
+                list-style-type: none;
+                margin: 0px 0px 0px 20px;
+            }
+
+
+            .tocify-item{
+                margin-top: 0px;
+            }
+            .tocify-item > a, a:hover{
+                color: #888;
+                text-decoration: none;
+            }
+            .tocify-item > a:hover{
+                color: #888;
+                text-decoration: none;
+            }
+
+            #toc > .tocify-header > .tocify-subheader{
+                list-style-type: none;
+                margin: 0px 0px 0px 20px;
+            }
+        </style>
+
         <link href="https://factor.io/assets/landing.css" rel="stylesheet">
     </head>
 
@@ -30,8 +63,10 @@
             {% if include_search %}{% include "search.html" %}{% endif %}
 
             <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+            <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
             <script src="{{ base_url }}/js/bootstrap-3.0.3.min.js"></script>
             <script src="{{ base_url }}/js/prettify-1.0.min.js"></script>
+            <script src="{{ base_url }}/js/jquery.tocify.min.js"></script>
             <script src="{{ base_url }}/js/base.js"></script>
         </div>
 
