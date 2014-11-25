@@ -1,7 +1,7 @@
 Let's create our working directory, `workflows`, and we'll add one file `connectors.yml`.
 ```shell
-mkdir /workflows
-cd workflows
+mkdir ~/workflows
+cd ~/workflows
 touch connectors.yml
 ```
 
@@ -22,7 +22,7 @@ First, go to [http://requestb.in/](http://requestb.in/) and `Create a RequestBin
 
 Now run this command
 ```shell
-factor run web::post '{"url":"http://requestb.in/1h15g3i1"}'
+factor run web::post '{"url":"http://requestb.in/1h15g3i1","params":{"foo":"bar"}}'
 ```
 
 When you run this, you should see output like this.
@@ -38,6 +38,8 @@ When you run this, you should see output like this.
 ```
 
 The first option, `web::post` instructed the runtime to call the action `post` on the `web` connector. The runtime opened up the `connectors.yml` file and found the URL by looking up the value for `web`. Based on the URL it connected to the service to execute the `post` action.
+
+Now when you visit your PostBin URL you will see that `foo: bar` was posted as a Form/Post parameter.
 
 ## Nesting connectors.yml
 Sometimes for the sake of organization we may want to nest our `connectors.yml` file.

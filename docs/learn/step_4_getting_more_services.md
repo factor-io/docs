@@ -16,7 +16,9 @@ When you run these commands you will see that your `connectors.yml` file will be
 **connectors.yml**
 ```ruby
 ---
-github: wss://open-connectors.factor.io/v0.4/github
+github:
+  issues: wss://open-connectors.factor.io/v0.4/github_issue
+  repos: wss://open-connectors.factor.io/v0.4/github_repo
 heroku: wss://open-connectors.factor.io/v0.4/heroku
 timer: wss://open-connectors.factor.io/v0.4/timer
 web: wss://open-connectors.factor.io/v0.4/web
@@ -40,7 +42,7 @@ Earlier we used the Timer and Web connectors which were both unauthenticated. Ho
 ## List available services
 Github and Heroku are just a couple of the supported services. There are many more. You can list the available services by running this command.
 ```shell
-factor registroy connectors
+factor registry connectors
 ```
 
 

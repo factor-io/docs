@@ -11,7 +11,7 @@ First, follow the [RVM install instructions](https://rvm.io/rvm/install).
 Next, Use RVM to install and run Ruby 2.1.3
 ```shell
 rvm install ruby-2.1.3
-rvm use ruby-2.1.3
+rvm use ruby-2.1.3 --default
 ```
 
 ## Install the Factor.io Runtime
