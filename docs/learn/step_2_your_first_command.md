@@ -15,7 +15,7 @@ web: wss://open-connectors.factor.io/v0.4/web
 ```
 This is a YAML-formatted file which consists of a hash where the key is the service name and the leaves are the URIs to the Connectors.
 
-A **Connector** is a web service which acts as a common API to all third party services. The `factor run` and `factor server` commands (which we will use) depend on the connector service to integrate with third party services. You can run your own connector service and even buid your own integrations. In these examples we will use an open and public connector service provided by Factor.io at `open-connectors.factor.io`.
+A **Connector** is a web service which acts as a common API to all third party services. The `factor run` and `factor server` commands (which we will use) depend on the connector service to integrate with third party services. You can run your own connector service and even build your own integrations. In these examples we will use an open and public connector service provided by Factor.io at `open-connectors.factor.io`.
 
 ## Run your first command
 First, go to [http://requestb.in/](http://requestb.in/) and `Create a RequestBin`. Replace the URL value with the one provided by RequestBin.

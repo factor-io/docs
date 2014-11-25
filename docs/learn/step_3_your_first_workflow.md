@@ -1,7 +1,7 @@
 In previous steps we ran commands from the command line. However, in most cases you will want to execute a number of actions and listen for events. To do this, we will now create our first workflow.
 
 
-## Add the Timer Connector to conenctors.yml
+## Add the Timer Connector to connectors.yml
 In the last example we used the `Web` connector, now we want to add the `Timer` connector.
 
 ```yaml
@@ -53,7 +53,7 @@ run 'web::post', url: 'http://requestb.in/1h15g3i1' do |post_info|
   info 'post complete'
 end
 ```
-This should look familiar. As you can see we use `run` to call a specific action, in this case `web::post` with the `url` parameter. As you can see, both `run` and `listen` use the same pattern as the first option is the referene to our connector + action/event, the following paramters are the options to pass to that action/listener, followed by a new block of code.
+This should look familiar. As you can see we use `run` to call a specific action, in this case `web::post` with the `url` parameter. As you can see, both `run` and `listen` use the same pattern as the first option is the referene to our connector + action/event, the following parameters are the options to pass to that action/listener, followed by a new block of code.
 
 The `run` action will execute the work one time, once the work is complete it returns some information and calls the inside block. 
 

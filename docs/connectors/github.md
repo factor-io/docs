@@ -92,7 +92,7 @@ The Issue Comment Listener (`github::issue_comment`) is triggered when an issue 
     end
 
 # github::issues
-The Issues Listener (`github::issues`) is triggered when an issue is assigned, unassiagned, labeled, unlabeled, opened, closed, or reoponed. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#issuesevent).
+The Issues Listener (`github::issues`) is triggered when an issue is assigned, unassigned, labeled, unlabeled, opened, closed, or reoponed. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#issuesevent).
 
 ## Example
     listen 'github::issues', repo:'skierkowski/hello' do |issue|
@@ -109,7 +109,7 @@ The Member Listener (`github::member`) is triggered when a user is added as a co
 
 
 # github::page_build
-The Page Build Listener (`github::page_build`) is triggered when an attept is made to build a Github Page site, whether successful or not. This is triggered on push to a Github Pages enabled branch, either `gh-pages` for project pages, or `master` for user/organization pages. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#pagebuildevent).
+The Page Build Listener (`github::page_build`) is triggered when an attempt is made to build a Github Page site, whether successful or not. This is triggered on push to a Github Pages enabled branch, either `gh-pages` for project pages, or `master` for user/organization pages. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#pagebuildevent).
 
 ## Example
     listen 'github::page_build', repo:'skierkowski/hello' do |page|
@@ -134,7 +134,7 @@ The Pull Request Listener (`github::pull_request`) is triggered when a pull requ
 
 ## Example
     listen 'github::pull_request', repo:'skierkowski/hello' do |request|
-      msg = "Pull request #{request.number} was #{request.action}: #{reqest.pull_request.title}"
+      msg = "Pull request #{request.number} was #{request.action}: #{request.pull_request.title}"
       run 'hipchat::send', room:'Engineering', message: msg
     end
 
