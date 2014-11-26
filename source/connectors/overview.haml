@@ -1,0 +1,16 @@
+---
+title: Overview
+category: Connectors
+order: 1
+---    
+
+:markdown
+  These are the currently available Connectors. If you don't see one you would like, email [support@factor.io](mailto:support@factor.io), or [learn how to implement your own](/guides/build_custom_connectors.html).
+
+
+- sitemap.resources.each do |page|
+  - if page.metadata[:page]['logo'] && page.metadata[:page]['title']
+    .connector
+      %a(href="/#{page.path}")
+        %img.logo(src="#{page.metadata[:page]['logo']}")
+        .title= page.metadata[:page]['title']

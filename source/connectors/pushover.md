@@ -1,6 +1,7 @@
 ---
 title: Pushover
 category: Connectors
+logo: https://factor.io/assets/channel_logos/pushover.png
 ---
 Pushover is a simple notification service which you can use to send notifications to your mobile device.
 

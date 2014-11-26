@@ -2,6 +2,7 @@
 title: BitBalloon
 category: Connectors
 status: revise
+logo: https://factor.io/assets/channel_logos/bitballoon.png
 ---
 [BitBalloon](https://www.bitballoon.com/) is a static site hosting service. Factor.io provides a way to deploy static files to your site hosted on BitBalloon.
 

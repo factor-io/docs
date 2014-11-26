@@ -2,6 +2,7 @@
 title: Tutum
 category: Connectors
 status: incomplete
+logo: https://raw.githubusercontent.com/factor-io/connector-tutum/master/logo.png
 ---
 # Authentication
 # tutum::service::list

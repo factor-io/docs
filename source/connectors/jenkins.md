@@ -2,6 +2,7 @@
 title: Jenkins
 category: Connectors
 status: incomplete
+logo: https://factor.io/assets/channel_logos/jenkins.png
 ---
 # Authentication
 

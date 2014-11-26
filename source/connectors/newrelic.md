@@ -1,6 +1,7 @@
 ---
 title: NewRelic
 category: Connectors
+logo: https://raw.githubusercontent.com/factor-io/connector-newrelic/master/logo.png
 ---
 # Authentication
 

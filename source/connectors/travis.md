@@ -1,6 +1,7 @@
 ---
 title: Travis
 category: Connectors
+logo: https://raw.githubusercontent.com/factor-io/connector-travis/master/logo.png
 ---
 # Authentication
 Authentication can be achieve with either an access token or a github token. 

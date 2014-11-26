@@ -2,6 +2,7 @@
 title: Trello
 category: Connectors
 status: incomplete
+logo: https://factor.io/assets/channel_logos/trello.png
 ---
 # Authentication
 # trello::boards::find

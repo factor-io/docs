@@ -66,6 +66,35 @@
                 list-style-type: none;
                 margin: 0px 0px 0px 20px;
             }
+
+            .connector{
+              -webkit-border-radius: 10px;
+              -moz-border-radius: 10px;
+              border-radius: 10px;
+              background-color: #FFF;
+              border: 2px solid #46bd93;
+              
+              width: 116px;
+              height: 116px;
+              text-align: center;
+              display: inline-block;
+              margin: 10px;
+            }
+            .connector > a:link {
+              padding: 10px;
+              display: block;
+              text-decoration: none;
+            }
+
+            .connector > a > .logo {
+              display: inline-block;
+              width: 70px;
+              height: 70px;
+            }
+            .connector > a > .title {
+              font-weight: bold;
+              text-decoration: none;
+            }
         </style>
 
         <%= stylesheet_link_tag 'https://factor.io/assets/landing.css' %>

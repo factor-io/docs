@@ -2,6 +2,7 @@
 title: PagerDuty
 category: Connectors
 status: incomplete
+logo: https://raw.githubusercontent.com/factor-io/connector-pagerduty/master/logo.png
 ---
 # Authentication
 As an administrative user of [PagerDuty](http://www.pagerduty.com/), you can access your service key by replacing your information in the link below.
