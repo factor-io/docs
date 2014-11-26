@@ -9,94 +9,9 @@
         <title><%= current_page.data.title || "Factor.io Docs" %></title>
 
         <style>
-            /*<%= Rouge::Themes::Base16.mode(:light).render(scope: '.highlight') %>*/
-            <%= Rouge::Themes::Github.render(scope: '.highlight') %>
-
-            div.edit{
-              margin-top: 40px;
-              width: 100%;
-              /*background-color: #fff;*/
-              color: #999;
-            }
-            div.edit > a {
-              color: #999;
-              text-decoration: none;
-            }
-            div[role=main] > .step_link{
-              text-decoration: none;
-            }
-            .highlight{
-              background-color: #FFF;
-            }
-
-            div[role=main] > h1 {
-                color: #3dac85;
-            }
-            div[role=main] > h2 {
-                color: #444;
-                font-size: 26px;
-            }
-
-            div[role=main] > p, li {
-                color: #666;
-            }
-            .table{
-                background-color: #FFF;
-            }
-
-            #toc > .tocify-header{
-                list-style-type: none;
-                margin: 0px 0px 0px 20px;
-            }
-
-
-            .tocify-item{
-                margin-top: 0px;
-            }
-            .tocify-item > a, a:hover{
-                color: #888;
-                text-decoration: none;
-            }
-            .tocify-item > a:hover{
-                color: #888;
-                text-decoration: none;
-            }
-
-            #toc > .tocify-header > .tocify-subheader{
-                list-style-type: none;
-                margin: 0px 0px 0px 20px;
-            }
-
-            .connector{
-              -webkit-border-radius: 10px;
-              -moz-border-radius: 10px;
-              border-radius: 10px;
-              background-color: #FFF;
-              border: 2px solid #46bd93;
-              
-              width: 116px;
-              height: 116px;
-              text-align: center;
-              display: inline-block;
-              margin: 10px;
-            }
-            .connector > a:link {
-              padding: 10px;
-              display: block;
-              text-decoration: none;
-            }
-
-            .connector > a > .logo {
-              display: inline-block;
-              width: 70px;
-              height: 70px;
-            }
-            .connector > a > .title {
-              font-weight: bold;
-              text-decoration: none;
-            }
+          <%= Rouge::Themes::Github.render(scope: '.highlight') %>
         </style>
-
+        <%= stylesheet_link_tag 'all' %>
         <%= stylesheet_link_tag 'https://factor.io/assets/landing.css' %>
         <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
         
@@ -123,13 +38,12 @@
       </div>
 
 
-        <div style="background-color: #EEE; padding: 20px 0px; overflow:hidden;">
-
-            <div style="margin-right: auto; margin-left:auto; width: 940px;">
-                <div style='width: 240px; float:left; min-height: 1px;'>
+        <div id='docs'>
+            <div id='wrapped'>
+                <div role='navigation'>
                   <%= partial 'navigation' %>
                 </div>
-                <div style='width: 680px; float:left; min-height: 1px; margin-left: 20px;' role="main">
+                <div role="main">
                   <% if current_page.metadata[:page]['status'] %>
                     <% status = current_page.metadata[:page]['status'] %>
                     <% message = status %>
