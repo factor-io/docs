@@ -5,9 +5,9 @@ branches:
   only:
     - master
 install:
-  - pip install mkdocs==0.11.1
+  - bundle install
 script:
-  - mkdocs build
+  - bundle exec middleman build
 deploy:
   provider: s3
   access_key_id: AKIAINGWPC5AK4TBL4FA
