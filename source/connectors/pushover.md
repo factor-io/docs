@@ -5,13 +5,15 @@ category: Connectors
 Pushover is a simple notification service which you can use to send notifications to your mobile device.
 
 # Authentication
-You will need the Username (username) and API Key (api_key) from Pushover. The username can be found under the "Your User Key" section after you login to [Pushover](https://pushover.net). To get the API Key first you need to create an Application by followin the steps on "Register an Application". After you register, you will get an "API Key" for that applicaiton. The username and api_key are to be placed in the credentials.yml file.
+You will need the Username (username) and API Key (api\_key) from Pushover. The username can be found under the "Your User Key" section after you login to [Pushover](https://pushover.net). To get the API Key first you need to create an Application by followin the steps on "Register an Application". After you register, you will get an "API Key" for that applicaiton. The username and api_key are to be placed in the credentials.yml file.
 
 **credentials.yml**
 
-    pushover:
-      username: NFOhPbj45iTHBXlZhqpw
-      api_key: C9SwnAK55Px2BlgnTo
+```yaml
+pushover:
+  username: NFOhPbj45iTHBXlZhqpw
+  api_key: C9SwnAK55Px2BlgnTo
+```
 
 # pushover::notify
 The Notify Action (`pushover::notify`) sends messages to your Pushover clients.
