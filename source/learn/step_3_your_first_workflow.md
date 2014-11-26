@@ -10,6 +10,8 @@ In previous steps we ran commands from the command line. However, in most cases 
 # Add the Timer Connector to connectors.yml
 In the last example we used the `Web` connector, now we want to add the `Timer` connector.
 
+**connectors.yml**
+
 ```yaml
 ---
 web: wss://open-connectors.factor.io/v0.4/web
@@ -90,4 +92,4 @@ When you run this command, you should see output like this.
 [    INFO    ] [11/20/14 14:30:53.113] post complete
 ```
 
-Based on the workflow definition, the last 7 lines will be logged over and over again every minute.
+In just a few lines of code we recreated functionality of services like [EasyCron](https://www.easycron.com/) or open source projects like [minicron](https://github.com/jamesrwhite/minicron).

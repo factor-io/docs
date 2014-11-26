@@ -15,7 +15,7 @@ The API Key can be found under Account Settings > Data Sharing in the API access
 ## Input
 
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 server |  | The Server ID to get server metrics
 application |  | The Application ID to get the application metrics
 range | (optional) | A Hash with the values {from:'...', to:'...''} defining the date range for the summary. If not specified gets the current values.

@@ -41,7 +41,6 @@ github:
   api_key: b6c57341e27182c62a7be35d21027c759894d1b8
 heroku:
   api_key: c5cf88930faee3bd5297fd50d4ce9a43
-
 ```
 This is a new file with your credentials. This allows you to store the credentials outside of your workflow. You should add the `credentials.yml` file to your `.gitignore` file if you commit this code to git.
 

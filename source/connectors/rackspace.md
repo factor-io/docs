@@ -6,7 +6,8 @@ category: Connectors
 Rackspace requires a username, API Key, and for certain actions an SSH Key. To obtain your Username and API Key go to the **[Cloud Control Panel](https://mycloud.rackspace.com/)** > **Account Settings**. There you will find "Username" and "API Key" information.
 
 **credentials.yml**
-```yml
+
+```yaml
 rackspace:
   api_key: d3aea086db586db5e981c28bfe852d3ae
   username: skierkowski
@@ -14,7 +15,7 @@ rackspace:
 
 For operations like bootstrapping a new server, you will also need to provide public private key pair.
 
-```yml
+```yaml
 ---
 rackspace:
   api_key: d3aea086db586db5e981c28bfe852d3ae
@@ -62,6 +63,7 @@ web: wss://open-connectors.factor.io/v0.4/web
 
 ## Output
 Output is an Array of Hashes. The Factor Server automatically converts this to a nested OStruct, so you can address variables like `servers.first.addresses.public.last.addr`.
+
 ```ruby
 [
   {
@@ -142,6 +144,7 @@ end
 
 ## Output
 Output is a Hash of details for that server. The Factor Server automatically converts this to a nested OStruct, so you can address variables like `server.addresses.public.last.addr`.
+
 ```ruby
 {
   :state => "ACTIVE",
@@ -203,6 +206,7 @@ Output is a Hash of details for that server. The Factor Server automatically con
 - **wait** (optional, default: true): By default this will start the creation process and wait until it is completed (or fails). This can take about 10 minutes to complete, but will be ready to use once complete. By setting 'wait' to false, the creation will run asynchronously and the execution will continue without waiting for the results.
 
 ## Output
+
 ```ruby
 {
   :state => "ACTIVE",
@@ -281,6 +285,7 @@ This is the only action which requires the additional SSH public/private key to 
 - **wait** (optional, default: true): By default this will start the creation process and wait until it is completed (or fails). This can take about 10 minutes to complete, but will be ready to use once complete. By setting 'wait' to false, the creation will run asynchronously and the execution will continue without waiting for the results.
 
 ## Output
+
 ```ruby
 {
   :state => "ACTIVE",
@@ -373,6 +378,7 @@ Use this to run SSH commands on server. You can pass a list of commands and all 
 ```
 
 ## Example
+
 ```ruby
 listen 'github::push', repo:'factor-io/console' do |github_info|
   run 'rackspace::compute::list', region:'dfw' do |servers|
@@ -400,6 +406,7 @@ This will delete a server in a region. This executes asynchronously, so it will 
 
 ## Output
 Output is a Hash of details for that server. 
+
 ```ruby
 {
   :state => "ACTIVE",
@@ -469,6 +476,7 @@ Output is a Hash of details for that server.
 - **region** (optional, default:'ord'): A string containing the three letter region
 
 ## Output
+
 ```ruby
 [
   {
@@ -533,6 +541,7 @@ Output is a Hash of details for that server.
 ```
 
 ### Example
+
 ```ruby
 listen 'hipchat::message', room:'Factor', filter:'rackspace flavors ([a-zA-Z0-1])' do |hipchat|
   criteria = hipchat.matches[0]
@@ -651,7 +660,7 @@ end
 
 ## Input
 ID | default | Description
--- | -------- | -----------
+--- | -------- | -----------
 region | 'ord' | A string containing the three letter region
 
 ## Output
@@ -676,7 +685,7 @@ region | 'ord' | A string containing the three letter region
 
 ## Input
 ID | default | Description
--- | -------- | -----------
+--- | -------- | -----------
 region | 'ord' | A string containing the three letter region
 id | false | The Load Balancer ID
 
@@ -730,7 +739,7 @@ id | false | The Load Balancer ID
 
 ## Input
 ID | default | Description
--- | -------- | -----------
+--- | -------- | -----------
 region | 'ord' | A string containing the three letter region
 id | false | The Load Balancer ID
 
@@ -739,7 +748,7 @@ id | false | The Load Balancer ID
 
 ## Input
 ID | default | Description
--- | -------- | -----------
+--- | -------- | -----------
 region | 'ord' | A string containing the three letter region
 id |  | The Load Balancer ID
 name | | Name of the load balancer
@@ -753,7 +762,7 @@ wait | false | Should the call wait until the load balancer is created (or faile
 # rackspace::loadbalancer::add_node
 ## Input
 ID | default | Description
--- | -------- | -----------
+--- | -------- | -----------
 region | 'ord' | A string containing the three letter region
 id |  | The Load Balancer ID
 address |  | The host address, no port, scheme, or path
@@ -761,9 +770,11 @@ port | 80 | The TCP/IP Port to use
 condition | 'ENABLED' | State of the node. Likely want to keep the default here.
 
 # rackspace::loadbalancer::remove_node
+
 ## Input
+
 ID | default | Description
--- | -------- | -----------
+--- | -------- | -----------
 region | 'ord' | A string containing the three letter region
 load_balancer_id |  | The Load Balancer ID
 id |  | Node ID
@@ -773,7 +784,7 @@ id |  | Node ID
 
 ## Input
 ID | default | Description
--- | -------- | -----------
+--- | -------- | -----------
 region | 'ord' | A string containing the three letter region
 id |  | The Load Balancer ID
 

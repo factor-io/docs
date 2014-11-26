@@ -29,6 +29,7 @@ A **Connector** is a web service which acts as a common API to all third party s
 First, go to [http://requestb.in/](http://requestb.in/) and `Create a RequestBin`. Replace the URL value with the one provided by RequestBin.
 
 Now run this command
+
 ```shell
 factor run web::post '{"url":"http://requestb.in/1h15g3i1","params":{"foo":"bar"}}'
 ```

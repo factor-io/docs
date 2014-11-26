@@ -6,7 +6,7 @@ This Chef Connector enables you to bootstrap a server using both Chef Server and
 
 # Authentication
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 private_key | false | The Private Key chef needs to SSH into the remote server
 validation_key | false | The validation key provided by Chef Server. Typically found in `~/.chef`.
 organization | false | The organization name as managed in Chef Server.
@@ -17,6 +17,7 @@ chef_server | https://api.opscode.com/organizations/{organization} | The Chef Se
 Below is an example credentials.yml file with the above values.
 
 **credential.yml**
+
 ```yaml
 ---
 chef:
@@ -53,7 +54,7 @@ chef:
 
 ## Input parameters
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 host | false | The host address for the server to bootstrap, including the username (e.g. `ubuntu@10.03.221.02`)
 runlist | false | The Chef runlist for bootstrapping. e.g. `role[console]`
 name | false | The name of the server as it will be captured on the chef server

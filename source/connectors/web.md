@@ -10,7 +10,7 @@ The Hook Listener (`web::hook`) generates a one-time web hook as a trigger to yo
 ## Parameters:
 
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 id | (random) | An optional parameter to generate a static address. By default the hook address will be generated at random every time this is restarted. By specifying an ID the generate address will be `/v0.4/hooks/<hook_id>` as opposed to `/v0.4/web/listeners/hook/<random_instance_id>/hooks/<random_hook_id>`.
 
 ## Output:
@@ -32,7 +32,7 @@ end
 The Post Action (`web::post`) will make an HTTP POST to the provided address with the parameters and headers provided
 
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 params | {} | a hash of the variables to POST. This will be JSON serialized and passed as the body in the HTTP POST.
 headers | {} | a hash of the HTTP Headers to pass.
 url | false | the HTTP Address to POST to.
@@ -57,8 +57,9 @@ end
 The Get Action (`web::get`) will make an HTTP POST to the provided address with the parameters and headers provided
 
 ## Parameters
+
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 params | {} | a hash of the variables to add as query string parameters.
 headers | {} | a hash of the HTTP Headers to pass.
 url | false | the HTTP Address to POST to.

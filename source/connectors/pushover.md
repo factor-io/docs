@@ -17,22 +17,28 @@ You will need the Username (username) and API Key (api_key) from Pushover. The u
 The Notify Action (`pushover::notify`) sends messages to your Pushover clients.
 
 ## Parameters
-- **message (required)**: The message to send to your device
-- **title (optional)**: (defualt: 'Factor.io'): Optional title of the message
+ID | Default | Description
+--- | --- | ---
+message | | The message to send to your device
+title | 'Factor.io' | Optional title of the message
 
 ## Response
-    {
-      'status':1,
-      'request': '99fc262204305588f222c3445fd82364'
-    }
+```ruby
+{
+  'status'  => 1,
+  'request' => '99fc262204305588f222c3445fd82364'
+}
+```
 
 ## Example
-    listen 'github::push', repo:'skierkowski/hello' do |repo_info|
-      run 'pushover::notify', message: "#{repo_info.repository.full_name} has new code" do |notify_info|
-        if notify_info.status == 1
-          success "Message delivered" 
-        else
-          fail "Failed to deliver message"
-        end
-      end
+```ruby
+listen 'github::push', repo:'skierkowski/hello' do |repo_info|
+  run 'pushover::notify', message: "#{repo_info.repository.full_name} has new code" do |notify_info|
+    if notify_info.status == 1
+      success "Message delivered" 
+    else
+      fail "Failed to deliver message"
     end
+  end
+end
+```

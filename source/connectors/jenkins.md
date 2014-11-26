@@ -27,7 +27,7 @@ jenkins:
 ## Input
 
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 filter | (optional) | Regex for searching through jobs
 status | (optional) | The job status to filter by
 
@@ -38,11 +38,11 @@ status | (optional) | The job status to filter by
 ## Input
 
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 job |  | The Job ID to build
 
 ## Output
-```json
+```javascript
 {
   code: '200'
 }
@@ -53,11 +53,11 @@ job |  | The Job ID to build
 ## Input
 
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 job |  | The Job ID to stop
 
 ## Output
-```json
+```javascript
 {
   code: '200'
 }
@@ -68,11 +68,11 @@ job |  | The Job ID to stop
 ## Input
 
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 job |  | The Job ID to get the status
 
 ## Output
-```json
+```javascript
 {
   code: '200'
 }
@@ -82,12 +82,12 @@ job |  | The Job ID to get the status
 ## Input
 
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 job |  | The Job ID to rename
 new_job | | The new Job ID
 
 ## Output
-```json
+```javascript
 {
   code: '200'
 }

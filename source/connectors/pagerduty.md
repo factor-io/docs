@@ -16,7 +16,7 @@ Your access key can be found in the same way.
 
 ## Input
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 service_key | | 
 incident_key | | 
 client | | 
@@ -28,7 +28,7 @@ description | |
 
 ## Input
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 service_key | | 
 incident_key | | 
 
@@ -37,7 +37,7 @@ incident_key | |
 
 ## Input
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 service_key | | 
 incident_key | | 
 
@@ -46,7 +46,7 @@ incident_key | |
 
 ## Input
 ID | Default | Description
--- | ------- | -----------
+--- | ------- | -----------
 service_key | | 
 incident_key | | 
 

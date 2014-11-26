@@ -19,9 +19,10 @@ The deploy action (`bitballoon::deploy`) provides the means of uploading your fu
 
 ## Parameters
 
-- **site** (required): This is the GUID of your site. When you deploy your application from the command line, the BitBalloon CLI will generate a .bitballoon file in that directory. You can find the site ID in that file.
-- **content** (requried): This is a reference to the files to be uploaded. Other actions like github::push, github::download, ssh::download will generate a reference to these files.
-
+ID | Default | Description
+--- | --- | ---
+site | | This is the GUID of your site. When you deploy your application from the command line, the BitBalloon CLI will generate a .bitballoon file in that directory. You can find the site ID in that file.
+content | | This is a reference to the files to be uploaded. Other actions like github::push, github::download, ssh::download will generate a reference to these files.
 
 ## Example
 This example will wait for a git push in github, then upload it, build it, and download it from an SSH server. Once complete, it 

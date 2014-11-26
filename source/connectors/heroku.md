@@ -16,8 +16,12 @@ heroku:
 The Deploy Action (`heroku::deploy`) is an action to deploy files to an application in Heroku.
 
 ## Parameters
-- **app**: The Heroku application ID you are deploying.
-- **content**: The reference to the contents that is to be deployed. The contents is retreived from anther listener (e.g. github::push) or action (e.g. github::download)
+
+ID | Default | Description
+--- | --- | ---
+app | | The Heroku application ID you are deploying.
+content | | The reference to the contents that is to be deployed. The contents is retreived from anther listener (e.g. github::push) or action (e.g. github::download)
+
 
 ## Output prameters
 - **release**: Release number used to track in Heroku
