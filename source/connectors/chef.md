@@ -7,9 +7,9 @@ This Chef Connector enables you to bootstrap a server using both Chef Server and
 # Authentication
 ID | Default | Description
 --- | ------- | -----------
-private_key | false | The Private Key chef needs to SSH into the remote server
-validation_key | false | The validation key provided by Chef Server. Typically found in `~/.chef`.
-organization | false | The organization name as managed in Chef Server.
+private_key |  | The Private Key chef needs to SSH into the remote server
+validation_key |  | The validation key provided by Chef Server. Typically found in `~/.chef`.
+organization |  | The organization name as managed in Chef Server.
 chef_server | https://api.opscode.com/organizations/{organization} | The Chef Server URL.
 
 **Note**: Either the organization or chef_server value must be set, but not both. If the organization is provided the Chef Server URL will be generated to reference Hosted Chef, if you provided the Chef Server URL you can connect to your own Chef Server.
