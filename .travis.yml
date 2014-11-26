@@ -1,6 +1,6 @@
-language: python
+language: ruby
 python:
-  - "2.7.8"
+  - "2.1.3"
 branches:
   only:
     - master
