@@ -12,6 +12,16 @@
             /*<%= Rouge::Themes::Base16.mode(:light).render(scope: '.highlight') %>*/
             <%= Rouge::Themes::Github.render(scope: '.highlight') %>
 
+            div.edit{
+              margin-top: 40px;
+              width: 100%;
+              /*background-color: #fff;*/
+              color: #999;
+            }
+            div.edit > a {
+              color: #999;
+              text-decoration: none;
+            }
             div[role=main] > .step_link{
               text-decoration: none;
             }
@@ -59,6 +69,7 @@
         </style>
 
         <%= stylesheet_link_tag 'https://factor.io/assets/landing.css' %>
+        <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
         
     </head>
 
@@ -103,6 +114,15 @@
                       <a href="/<%= previous_page.path %>" class='step_link'>Previous: <%= previous_page.data.title %></a>
                     <% end %>
                   <% end %>
+
+                  <div class='edit'>
+                    <i class='fa fa-github fa-fw'></i>
+                    <% source_paths = current_page.source_file.split('/') %>
+                    <% path = source_paths[source_paths.index('source')+1..-1] %>
+                    <% code_url = "https://github.com/factor-io/docs/tree/master/source/#{path.join('/')}" %>
+                    <a href="<%=code_url%>">Edit this page on Github</a>
+
+                  </div>
                 </div>
             </div>
 
