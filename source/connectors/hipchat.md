@@ -9,8 +9,10 @@ Hipchat requires a personal API Key. This key can be found under Account Setting
 
 **credentials.yml**
 
-    hipchat:
-      api_key: b1488574a768a8a
+```yaml
+hipchat:
+  api_key: b1488574a768a8a
+```
 
 
 # hipchat::message
@@ -80,9 +82,11 @@ The Room Notification Listener (`hipchat::notification`) listens for when someon
 - **room** (required): the name of the room wher eyou want to listen for messages
 
 ## Example
-    listen 'hipchat::notification', room:'Factor' do |room|
-      run 'hipchat::send', room:'Factor', message: "Notification received #{room.item.message.message}"
-    end
+```ruby
+listen 'hipchat::notification', room:'Factor' do |room|
+  run 'hipchat::send', room:'Factor', message: "Notification received #{room.item.message.message}"
+end
+```
 
 # hipchat::exit
 The Room Message Listener (`hipchat::exit`) listens for when someone posts a new message to a room.  Details of returned data can be found [here](https://www.hipchat.com/docs/apiv2/webhooks#room_exit).
@@ -91,9 +95,12 @@ The Room Message Listener (`hipchat::exit`) listens for when someone posts a new
 - **room** (required): the name of the room wher eyou want to listen for messages
 
 ## Example
-    listen 'hipchat::exit', room:'Factor' do |room|
-      info "#{room.item.sender.name} exited the room"
-    end
+
+```ruby
+listen 'hipchat::exit', room:'Factor' do |room|
+  info "#{room.item.sender.name} exited the room"
+end
+```
 
 # hipchat::enter
 The Room Message Listener (`hipchat::enter`) listens for when someone posts a new message to a room. Details of returned data can be found [here](https://www.hipchat.com/docs/apiv2/webhooks#room_enter).
@@ -102,9 +109,11 @@ The Room Message Listener (`hipchat::enter`) listens for when someone posts a ne
 - **room** (required): the name of the room wher eyou want to listen for messages
 
 ## Example
-    listen 'hipchat::enter', room:'Factor' do |message|
-      info "#{room.item.sender.name} entered the room"
-    end
+```ruby
+listen 'hipchat::enter', room:'Factor' do |message|
+  info "#{room.item.sender.name} entered the room"
+end
+```
 
 # hipchat::topic_change
 The Room Message Listener (`hipchat::topic_change`) listens for when someone posts a new message to a room. Details of returned data can be found [here](https://www.hipchat.com/docs/apiv2/webhooks#room_topic_change).
@@ -113,9 +122,12 @@ The Room Message Listener (`hipchat::topic_change`) listens for when someone pos
 - **room** (required): the name of the room wher eyou want to listen for messages
 
 ## Example
-    listen 'hipchat::topic_change', room:'Factor' do |room|
-      info "Room topic changed to #{room.item.topic}"
-    end
+
+```ruby
+listen 'hipchat::topic_change', room:'Factor' do |room|
+  info "Room topic changed to #{room.item.topic}"
+end
+```
 
 # hipchat::end
 The Room Message Listener (`hipchat::send`) listens for when someone posts a new message to a room.
@@ -127,6 +139,9 @@ The Room Message Listener (`hipchat::send`) listens for when someone posts a new
 - **color** (optional, default: gray): The color of the message to post. 'grey' is default, but yellow, green, red, purple are all supported.
 
 ## Example
-    listen 'hipchat::message', room:'Factor', filter:'ping (.*)' do |message|
-      run 'hipchat::send', room:'Factor', message: "pong #{message.matches[0]}", color: 'green'
-    end
+
+```ruby
+listen 'hipchat::message', room:'Factor', filter:'ping (.*)' do |message|
+  run 'hipchat::send', room:'Factor', message:"pong #{message.matches[0]}", color: 'green'
+end
+```
