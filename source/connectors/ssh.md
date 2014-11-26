@@ -9,17 +9,19 @@ The SSH commands currently support authentication by SSH Keys only, no U/P suppo
 
 **credentials.yml**
 
-    ssh:
-      private_key: |
-        -----BEGIN RSA PRIVATE KEY-----
-        MIIEowIBAAKCAQEAgZfPXnu9RP1rBrUjiRN1piACKw/pjRLZ1amY68cmbNM45OjQrfbuOE2iAvvX
-        ZU7euTXKPwVHGbAOqSK2VIMtVmOKmMxDzrC7bcIes/WvbKL6wm6NqAPUZGmLHUXb3bJDEfijL8fl
-        nc3lp1jGyYmaPYBuRXL94VVZnUEKRSiLYTTdO+1V1abOgFCL/E3gI3AwAbbEgLPIDxYHVJ063JED
-        0Oa0h9d6ofqlBQErQG+rOzGUUSSLv9yDnlnVQJB7wj/6HMv8lBZ9HsAXf5Hl4PPd+ptVateyf3cK
-        nSXTKtKkDVF5fIeh9m3EgenvzmrVPcXx/mRFPmKsAfJ0VkN6bXVP1557WsFpKq2XBZNIhCjaGEko
-        +CvhsOCPlaab5TYi+PvlAe3AfFTu0rb+4Tu0jcpXqNA/tQKBgGV28L35cCplxtjznJzBRA+XVXvA
-        L87ipmp3EPz8nOQm2BUg2Stmk/r28xaonQZrYBqeiyrRS7SwfWBP42/N7HfArDriwWahm8A3dLVl
-        BGtjWhInjKCeP0ROk/tlMRHZ39pGhroiKjmrxg0jgDjy+WLmh4DRx1YuWLmoJkxeSzt5
+```yaml
+ssh:
+  private_key: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEowIBAAKCAQEAgZfPXnu9RP1rBrUjiRN1piACKw/pjRLZ1amY68cmbNM45OjQrfbuOE2iAvvX
+    ZU7euTXKPwVHGbAOqSK2VIMtVmOKmMxDzrC7bcIes/WvbKL6wm6NqAPUZGmLHUXb3bJDEfijL8fl
+    nc3lp1jGyYmaPYBuRXL94VVZnUEKRSiLYTTdO+1V1abOgFCL/E3gI3AwAbbEgLPIDxYHVJ063JED
+    0Oa0h9d6ofqlBQErQG+rOzGUUSSLv9yDnlnVQJB7wj/6HMv8lBZ9HsAXf5Hl4PPd+ptVateyf3cK
+    nSXTKtKkDVF5fIeh9m3EgenvzmrVPcXx/mRFPmKsAfJ0VkN6bXVP1557WsFpKq2XBZNIhCjaGEko
+    +CvhsOCPlaab5TYi+PvlAe3AfFTu0rb+4Tu0jcpXqNA/tQKBgGV28L35cCplxtjznJzBRA+XVXvA
+    L87ipmp3EPz8nOQm2BUg2Stmk/r28xaonQZrYBqeiyrRS7SwfWBP42/N7HfArDriwWahm8A3dLVl
+    BGtjWhInjKCeP0ROk/tlMRHZ39pGhroiKjmrxg0jgDjy+WLmh4DRx1YuWLmoJkxeSzt5
+```
 
 # ssh::execute
 The Remote Execute (`ssh::execute`) action allows you to execute commands on a remote server.
@@ -37,11 +39,14 @@ After you run the command you will get the results in the following variables:
 - **command[n].lines[m]**: the m-th line from the n-th command
 
 ## Example
-    listen 'timer::every', minutes:10 do
-      run 'ssh::execute', host:'ubuntu@sandbox.factor.io', commands:['pwd'] do |ssh_results|
-        info "Path: #{ssh_results.commands[0].lines[0]}"
-      end
-    end
+
+```ruby
+listen 'timer::every', minutes:10 do
+  run 'ssh::execute', host:'ubuntu@sandbox.factor.io', commands:['pwd'] do |ssh_results|
+    info "Path: #{ssh_results.commands[0].lines[0]}"
+  end
+end
+```
 
 
 # ssh::upload
@@ -53,9 +58,12 @@ The SCP Upload action (`ssh::upload`) is used to upload a file to a server via S
 - **path** (required): The absolute remote destination path for the file. This is to include the filename. Make sure the user has write permissions.
 
 ## Example
-    listen 'github::push', repo:'skierkowski/hello#master' do |github_info|
-      run 'ssh::upload', host:'ubuntu@sandbox.factor.io', path:'/home/ubuntu/web.zip', content:github_info.content do |deploy_info|
-        info 'Deployment is complete'
-      end
-    end
+
+```ruby
+listen 'github::push', repo:'skierkowski/hello#master' do |github_info|
+  run 'ssh::upload', host:'ubuntu@sandbox.factor.io', path:'/home/ubuntu/web.zip', content:github_info.content do |deploy_info|
+    info 'Deployment is complete'
+  end
+end
+```
 
