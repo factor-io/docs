@@ -7,10 +7,9 @@ order: 1
 :markdown
   These are the currently available Connectors. If you don't see one you would like, email [support@factor.io](mailto:support@factor.io), or [learn how to implement your own](/guides/build_custom_connectors.html).
 
-
-- sitemap.resources.each do |page|
-  - if page.metadata[:page]['logo'] && page.metadata[:page]['title']
-    .connector
-      %a(href="/#{page.path}")
-        %img.logo(src="#{page.metadata[:page]['logo']}")
-        .title= page.metadata[:page]['title']
+- connectors = sitemap.resources.select{|p|p.metadata[:page]['category']=='Connectors' && p.metadata[:page]['logo'] && p.metadata[:page]['title']}.sort_by{|p| p.metadata[:page]['title']}
+- connectors.each do |connector|
+  .connector
+    %a(href="/#{connector.path}")
+      %img.logo(src="#{connector.metadata[:page]['logo']}")
+      .title= connector.metadata[:page]['title']
