@@ -3,6 +3,8 @@ Factor.io Documentation
 
 Factor.io documentation hosted at http://docs.factor.io/
 
-First, `pip install mkdocs`
-
-Then, `mkdocs serve`
+```shell
+git clone git@github.com:factor-io/docs
+bundle install
+bundle exec middlman server
+```
