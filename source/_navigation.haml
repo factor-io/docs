@@ -1,0 +1,54 @@
+%style
+  :plain
+    #nav_header{
+
+    }
+    #nav_header > .title{
+        font-weight: bold;
+        color: #373737;
+        margin-top: 10px;
+    }
+
+    #nav_header > .title > a {
+        text-decoration: none;
+    }
+
+    #nav_header > a {
+        color: #888;
+        text-decoration: none;
+        margin: 10px 10px;
+        line-height: 25px;
+    }
+
+    #nav_header > a.active {
+        color: #222;
+    }
+
+
+#nav_header
+  - categories = ['Learn Factor.io', 'Factor.io Pro','Connectors', 'Guides']
+  - sitemap.resources.each do |page|
+    - active = current_page.path == page.path
+    - if page.metadata[:page]['category'].blank? && page.metadata[:page]['title']
+      .title
+        %a(href="/#{page.path}")= page.metadata[:page]['title']
+        %br
+  - categories.each do |category|
+    - if !category.blank?
+      .title= category
+      - sitemap.resources.sort_by{|page| page.metadata[:page]['order'] || 100}.each do |page|
+        - if page.metadata[:page]['order']
+          - active = current_page.path == page.path
+          - if page.metadata[:page]['category'] == category
+            %a(href="/#{page.path}" class="#{'active' if active}")= page.metadata[:page]['title']
+            %br
+            -if active
+              #toc
+      - sitemap.resources.sort_by{|page| page.data.title || ''}.each do |page|
+        - if !page.metadata[:page]['order']
+          - active = current_page.path == page.path
+          - if page.metadata[:page]['category'] == category
+            %a(href="/#{page.path}" class="#{'active' if active}")= page.metadata[:page]['title']
+            %br
+            -if active
+              #toc
