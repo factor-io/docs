@@ -1,6 +1,7 @@
 ---
 title: PagerDuty
 category: Connectors
+status: incomplete
 ---
 # Authentication
 As an administrative user of [PagerDuty](http://www.pagerduty.com/), you can access your service key by replacing your information in the link below.

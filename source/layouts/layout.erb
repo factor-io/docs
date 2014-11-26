@@ -101,6 +101,14 @@
                   <%= partial 'navigation' %>
                 </div>
                 <div style='width: 680px; float:left; min-height: 1px; margin-left: 20px;' role="main">
+                  <% if current_page.metadata[:page]['status'] %>
+                    <% status = current_page.metadata[:page]['status'] %>
+                    <% message = status %>
+                    <% state, message = 'danger', "This page has not yet been started" if status=='not started' %>
+                    <% state, message = 'danger', "This page is incomplete" if status=='incomplete' %>
+                    <% state, message = 'warning', "This page requires revision and may be inaccurate" if status=='revise' %>
+                    <div class='alert alert-<%=state%>'><strong><%=message %>.</strong> We are working on adding contents. You can help us improve the contents using the 'Edit this page on Github' button at the bottom.</div>
+                  <% end %>
                   <%= yield %>
                   <% if current_page.metadata[:page]['order'] %>
                     <% next_page = sitemap.resources.find{|page| page.metadata[:page]['category']==current_page.metadata[:page]['category'] && page.metadata[:page]['order']==current_page.metadata[:page]['order'] + 1} %>

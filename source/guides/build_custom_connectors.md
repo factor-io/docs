@@ -1,6 +1,7 @@
 ---
 title: Build custom Connectors
 category: Guides
+status: incomplete
 ---
 While a connector is a simple Web Socket based server, we haven't yet written the documentation.
 

@@ -1,6 +1,7 @@
 ---
 title: Jenkins
 category: Connectors
+status: incomplete
 ---
 # Authentication
 

@@ -2,6 +2,7 @@
 title: "Step 6: Handling failures"
 category: Learn Factor.io
 order: 6
+status: incomplete
 ---
 
 ```ruby

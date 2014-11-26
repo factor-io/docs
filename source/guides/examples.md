@@ -1,6 +1,7 @@
 ---
 title: Examples
 category: Guides
+status: revise
 ---
 # Github to Heorku Deployment
 This workflow registers a web-hook with Github for listening for all 'push' events. Once a push occurs it starts to deploy the application to Heroku. Once you start this workflow it will just sit there and listen, you need to push new code for the trigger to start. You will need to setup your credentials in the credentials.yml file for both Github and Heroku.

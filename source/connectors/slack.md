@@ -1,6 +1,7 @@
 ---
 title: Slack
 category: Connectors
+status: revise
 ---
 # Authentication
 Slack requires a token for all actions, you can get that at the main [api](https://api.slack.com/) page. Other common requirements are [channel](https://api.slack.com/methods/channels.list/test), and [users](https://api.slack.com/methods/users.list/test). We've set it up so that you can use you member names and channel names but you can grab any id for those there. Set up the credentials.yml with your token.

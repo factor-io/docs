@@ -1,6 +1,7 @@
 ---
 title: Trello
 category: Connectors
+status: incomplete
 ---
 # Authentication
 # trello::boards::find
