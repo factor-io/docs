@@ -1,5 +1,5 @@
 #nav_header
-  - categories = ['Learn Factor.io', 'Factor.io Pro','Connectors', 'Guides']
+  - categories = ['Learn Factor.io', 'Factor.io Pro','Connectors', 'Guides', 'Build a custom connector']
   - sitemap.resources.each do |page|
     - active = current_page.path == page.path
     - if page.metadata[:page]['category'].blank? && page.metadata[:page]['title']

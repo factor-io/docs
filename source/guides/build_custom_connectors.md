@@ -1,18 +1,6 @@
 ---
 title: Build custom Connectors
 category: Guides
-status: incomplete
 ---
-While a connector is a simple Web Socket based server, we haven't yet written the documentation.
 
-# API
-## Listeners
-### Starting
-### Stopping
-### Triggering
-
-## Actions
-### Calling
-### Responses
-#### Failure
-#### Success
+The easiest way to build a custom connector is to follow the ["Build a custom connector" tutorial](/building_connector/step_1_intro.html).
