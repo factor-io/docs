@@ -29,11 +29,12 @@
           </div>
       </div>
       <div id='title'>
-          <div id='container'>
-              <% category = current_page.metadata[:page]['category'] %>
-              <% prefix = category ? "#{category}: " : '' %>
-              <h2><%= prefix + (current_page.data.title || "Factor.io Docs") %></h2>
-
+          <% category = current_page.metadata[:page]['category'] %>
+          <div id='container' class="<%= 'sub' if category %>">
+              <h2><%= current_page.data.title || "Factor.io Docs" %></h2>
+              <% if category %>
+                <h3><%= category %></h3>
+              <% end %>
           </div>
       </div>
 
