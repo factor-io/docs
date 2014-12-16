@@ -26,22 +26,41 @@
         color: #CCC
 
 #nav_header
+  border: solid 1px #DDD
+  background-color: #fff
+  margin-left: -10px
+  padding-left: 10px
+  
+  border-radius: 5px
   .title
     font-weight: bold
     color: #373737
-    margin-top: 10px
+    padding-top: 5px
+    padding-bottom: 5px
+    cursor: pointer
+    border-bottom: solid 1px #DDD
+    border-top: solid 1px #DDD
+    margin-left: -10px
+    padding-left: 10px
+    margin-bottom: -1px
+    &:first-of-type
+      margin-top: -1px
     a
       text-decoration: none
       margin-left: 0px
       color: #373737
-  a
-    color: #888
-    text-decoration: none
-    margin: 10px 10px
-    line-height: 25px
-  a.active
-    color: #222
-
+    i
+      color: #999
+      font-size: 12px
+  .group
+    a
+      color: #888
+      text-decoration: none
+      margin: 10px 10px
+      line-height: 25px
+    a.active
+      color: #222
+      font-weight: bold
 a.button
   text-decoration: none
 

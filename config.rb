@@ -47,11 +47,11 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true, :tables=>true,
 # set :markdown_engine, :kramdown
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def to_id(str)
+    str.downcase.gsub(/[^a-z0-9]/,'_')
+  end
+end
 
 set :css_dir, 'stylesheets'
 

@@ -8,20 +8,24 @@
         %br
   - categories.each do |category|
     - if !category.blank?
-      .title= category
-      - sitemap.resources.sort_by{|page| page.metadata[:page]['order'] || 100}.each do |page|
-        - if page.metadata[:page]['order']
-          - active = current_page.path == page.path
-          - if page.metadata[:page]['category'] == category
-            %a(href="/#{page.path}" class="#{'active' if active}")= page.metadata[:page]['title']
-            %br
-            -if active
-              #toc
-      - sitemap.resources.sort_by{|page| page.data.title || ''}.each do |page|
-        - if !page.metadata[:page]['order']
-          - active = current_page.path == page.path
-          - if page.metadata[:page]['category'] == category
-            %a(href="/#{page.path}" class="#{'active' if active}")= page.metadata[:page]['title']
-            %br
-            -if active
-              #toc
+      .title(data-toggle='collapse' data-parent='#nav_header' href='##{to_id(category)}')
+        %i.icon-chevron-right
+        = category
+      - any_active = sitemap.resources.any? {|page| current_page.path == page.path && page.metadata[:page]['category'] == category}
+      .collapse.group(id="#{to_id(category)}" class="#{'in' if any_active}")
+        - sitemap.resources.sort_by{|page| page.metadata[:page]['order'] || 100}.each do |page|
+          - if page.metadata[:page]['order']
+            - active = current_page.path == page.path
+            - if page.metadata[:page]['category'] == category
+              %a(href="/#{page.path}" class="#{'active' if active}")= page.metadata[:page]['title']
+              %br
+              -if active
+                #toc
+        - sitemap.resources.sort_by{|page| page.data.title || ''}.each do |page|
+          - if !page.metadata[:page]['order']
+            - active = current_page.path == page.path
+            - if page.metadata[:page]['category'] == category
+              %a(href="/#{page.path}" class="#{'active' if active}")= page.metadata[:page]['title']
+              %br
+              -if active
+                #toc
