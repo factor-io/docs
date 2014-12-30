@@ -8,11 +8,11 @@
         %br
   - categories.each do |category|
     - if !category.blank?
-      .title(data-toggle='collapse' data-parent='#nav_header' href='##{to_id(category)}')
-        %i.fa.fa-chevron-right
-
-        = category
       - any_active = sitemap.resources.any? {|page| current_page.path == page.path && page.metadata[:page]['category'] == category}
+      .title(data-toggle='collapse' data-parent='#nav_header' href='##{to_id(category)}' aria-expanded="#{any_active}" aria-controls="#{to_id(category)}")
+        %i.closed.fa.fa-chevron-right
+        %i.open.fa.fa-chevron-down
+        = category
       .collapse.group(id="#{to_id(category)}" class="#{'in' if any_active}")
         - sitemap.resources.sort_by{|page| page.metadata[:page]['order'] || 100}.each do |page|
           - if page.metadata[:page]['order']
