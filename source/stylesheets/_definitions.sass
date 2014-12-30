@@ -1,0 +1,72 @@
+$primary: #46bd93
+$secondary: #ED8F67
+$dark: #373737
+$mid: #D9D9CA
+$light: #f2f2ea
+$highlight: #ffffff
+$neutral: #f8f8f8
+
+=fg-primary
+  color: $primary
+=bg-primary
+  background-color: $primary
+=fg-secondary
+  color: $secondary
+=bg-secondary
+  background-color: $secondary
+=fg-dark
+  color: $dark
+=bg-dark
+  background-color: $dark
+=fg-mid
+  color: $mid
+=bg-mid
+  background-color: $mid
+=fg-light
+  color: $light
+=bg-light
+  background-color: $light
+=fg-neutral
+  color: $neutral
+=bg-neutral
+  background-color: $neutral
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+=gradient-directional($start-color: #555, $end-color: #333, $deg: 45deg)
+  background-repeat: repeat-x
+  background-image: -webkit-linear-gradient($deg, $start-color, $end-color)
+  background-image: -o-linear-gradient($deg, $start-color, $end-color)
+  background-image: linear-gradient($deg, $start-color, $end-color)
+
+=gradient-vertical-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f)
+  background-image: -webkit-linear-gradient($start-color, $mid-color $color-stop, $end-color)
+  background-image: -o-linear-gradient($start-color, $mid-color $color-stop, $end-color)
+  background-image: linear-gradient($start-color, $mid-color $color-stop, $end-color)
+  background-repeat: no-repeat
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0) // IE9 and down, gets no color-stop at all for proper fallback
+
+=gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%)
+  background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent)  // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent)  // Opera 12
+  background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent) // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0) // IE9 and down
+
+=box-shadow($shadow...)
+  -webkit-box-shadow: $shadow // iOS <4.3 & Android <4.1
+  box-shadow: $shadow
+
+$summary-width: 120px
+$details-width: 320px
+$workflow-width: 20px + $summary-width + 20px + 20px + $details-width + 20px
+
+$sb1-w: 72px
+$sb2-m: $sb1-w + 1px
+$sb2-w: 240px
+$mc-m: $sb2-m + $sb2-w + 1px
+$mc-w: 660px

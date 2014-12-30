@@ -1,0 +1,427 @@
+
+html, body
+  height: 100%
+  margin: 0
+  padding: 0
+  color: #333333
+  -webkit-text-size-adjust: none
+  font: 15px/22px "Helvetica Neue", "Helvetica", Arial, sans-serif
+  font-weight: normal
+  background: #DDDDDD
+
+label
+  cursor: auto
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select
+  border: 2px solid darken($neutral, 10%)
+  +border-radius(5px)
+  +box-shadow(none)
+
+button,
+input,
+select,
+textarea
+  vertical-align: baseline
+
+p
+  margin: 0
+  padding: 0 0 22px 0
+
+h1, h2, h3, h4, h5
+  margin: 0 0 22px 0
+  padding: 0
+  font-weight: normal
+  -webkit-font-smoothing: antialiased
+
+h1
+  font-size: 38px
+  line-height: 40px
+  letter-spacing: -1px
+
+h2
+  font-size: 30px
+  line-height: 32px
+
+h3
+  font-size: 21px
+  line-height: 24px
+
+#container
+  width: 960px
+  margin: 0 auto
+
+#wrap
+  min-height: 100%
+  height: auto !important
+  margin-top: 40px
+  +bg-neutral
+
+#banner
+  height: 120px
+  padding: 40px 50px 0 50px
+  position: relative
+  background-color: #FFFFFF
+  #header
+    a
+      &:link, &:visited, &:active
+        color: #888888
+        text-decoration: none
+      &:hover
+        color: #444444
+      float: right
+      display: inline-block
+      margin: 8px 0 0 15px
+      padding: 3px 8px
+      font-size: 16px
+      border: 1px solid transparent
+      +border-radius(3px)
+      &:hover
+        border: 1px solid #2bb25e
+      &.logo
+        width: 120px
+        height: 35px
+        margin: 0
+        display: block
+        float: left
+        border: none
+        background: transparent image-url('logo-small.png') no-repeat top left
+        +border-radius(0)
+      
+      &.logo:hover
+        border: none
+      
+      &.blog-logo
+        width: 160px
+        height: 35px
+        margin: 0
+        display: block
+        float: left
+        border: none
+        background: transparent url(/assets/blog_logo_full.png) no-repeat top left
+        +border-radius(0)
+      
+      &.blog-logo:hover
+        border: none
+
+#title
+  height: 80px
+  background-color: $primary
+  padding-top: 20px
+
+  +gradient-directional(darken($primary,25%),lighten(rgb(67,199,116),10%), 145deg)
+  color: #FFF
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2)
+  -webkit-font-smoothing: antialiased
+  h2
+    font-size: 48px
+    font-weight: bold
+    letter-spacing: 2px
+
+#console-title-bar
+  z-index: 98
+  position: fixed
+  border-bottom: solid 4px $primary
+  border-top: 1pt solid black
+  background-color: white
+  padding: 0px 0px 0px 20px
+  margin: 0px 0px 0px 72px
+  height: 70px
+  width: 100%
+  a
+    text-decoration: none
+  .section
+    vertical-align: top
+    display: inline-block
+    height: 70px
+    padding: 0px
+    margin: 0px
+    h1
+      margin: 0px
+      padding: 14px 10px 0px 10px
+      font-weight: 200
+      color: #666
+      font-size: 20pt
+    .dropdown
+      display: inline
+      a
+        .fa
+          font-size: 12pt
+          vertical-align: middle
+  .split
+    display: inline-block
+    background-image: url('/assets/breadcrumb-splitter.png')
+    background-position: center
+    background-repeat: no-repeat
+    width: 20px
+    height: 70px
+    padding: 0px 20px
+  
+
+
+#navbar
+  +bg-dark
+  background-image: none
+  +box-shadow(none)
+  font-size: 18px
+  height: 40px
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 99
+  .logo
+    margin: -6px 0 0 20px
+  .nav
+    li.open
+      a
+        color: $light
+    li
+      outline: none
+      a
+        color: $light
+        text-shadow: none
+        &:hover
+          color: $light
+    li.dropdown
+      ul.dropdown-menu
+        li
+          a
+            color: $dark
+
+
+
+
+#sidebar-1
+  background-color: lighten($dark, 10%)
+  +box-shadow(0 0 5px 2px rgba(0,0,0,0.6))
+  bottom: 0
+  float: left
+  min-height: 100%
+  position: fixed
+  top: 40px
+  width: $sb1-w
+
+  ul
+    font-size: 24px
+    list-style-type: none
+    margin: 0
+
+    li
+      text-align: center
+      border-top: 1px solid lighten($dark, 15%)
+      border-left: 1px solid lighten($dark, 15%)
+      border-right: 1px solid lighten($dark, 15%)
+      border-bottom: 1px solid lighten($dark, 5%)
+
+      .usericonbox
+        width: 50px
+        height: 50px
+        padding: 10px
+        margin: 0px
+      
+      .linkbox
+        padding: 10px 0px
+        a
+          text-decoration: none
+          color: #CCCCCC
+          i
+            line-height: normal
+            font-size: 30px
+          .title
+            font-size: 11px
+    li.active
+      background-color: lighten($dark, 4%)
+      border-top: 1px solid $dark
+      border-left: none
+      border-right: 1px solid lighten($dark, 10%)
+      border-bottom: 1px solid lighten($dark, 5%)
+
+      .linkbox
+        border-left: 4px solid $primary
+        a
+          color: #FFFFFF
+
+#sidebar-2
+  border-right: 1px solid darken($light, 10%)
+  +bg-light
+  float: left
+  margin-bottom: -40px
+  margin-left: $sb2-m
+  margin-top: 75px
+  position: fixed
+  width: $sb2-w
+  text-shadow: 0 1px 0 #fff
+  z-index: 70
+  min-height: 100%
+
+.main
+  +fg-dark
+  border-top: 4px solid $primary
+  padding-bottom: 200px
+  padding-left: $sb2-m+40px
+  padding-top: 90px
+  padding-right: 20px
+
+  & > .content
+    width: $mc-w
+  .box
+    background-color: darken($neutral, 2%)
+    border: 2px solid darken($neutral, 5%)
+    +border-radius(10px)
+    margin-bottom: 20px
+    overflow: hidden
+    padding: 20px
+    text-shadow: 0 1px 0 #fff
+    input[type="text"], input[type="email"], input[type="password"]
+      background: #fff
+      border: 2px solid darken($neutral, 5%)
+      +border-radius(2px)
+      +box-shadow(none)
+      margin-bottom: 10px
+      padding: 3px 5px
+    label, .form-label
+      color: lighten($dark, 20%)
+      font-size: 12px
+      font-weight: bold
+      margin-bottom: 0
+  & > .header
+    border-bottom: 1px solid darken($neutral, 5%)
+    margin: 0 40px
+    padding: 20px 0
+  
+  & > .body
+    margin: 0 40px
+    padding: 20px 0
+
+  &.with-menu
+    padding-left: $mc-m+40px
+
+#footer
+  color: #888888
+  font-size: 13px
+  text-shadow: 0 1px 0 #EEEEEE
+  background-color: #DDDDDD
+  a:link, a:visited, a:active
+    color: #888888
+    text-decoration: none
+  a:hover
+    color: #AAAAAA
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+  .footer-top
+    padding: 25px 0 20px 0
+    text-align: center
+    border-bottom: 1px solid #D3D3D3
+    -webkit-box-shadow: 0 1px 0 #E6E6E6
+    -moz-box-shadow: 0 1px 0 #E6E6E6
+    -ms-box-shadow: 0 1px 0 #E6E6E6
+    box-shadow: 0 1px 0 #E6E6E6
+    ul li
+      padding: 0 15px
+      display: inline-block
+      color: #888888
+  .footer-bottom
+    padding: 25px 0 150px 260px
+    margin: 0px auto
+    a
+      display: block
+    .footer1
+      width: 200px
+      float: left
+    .footer2, .footer3, .footer4
+      width: 120px
+      float: left
+
+.button
+  background-color: $primary
+  border: 2px solid darken($primary, 5%)
+  +border-radius(3px)
+  color: darken($primary, 30%)
+  display: inline-block
+  font-size: 16px
+  font-weight: bold
+  padding: 8px 12px
+  text-align: center
+  text-decoration: none
+  text-shadow: none
+
+  &:hover
+    background-color: darken($primary, 5%)
+    color: darken($primary, 40%)
+    text-decoration: none
+  
+
+  =has-icon($icon)
+    float: left
+    font-family: FontAwesome
+    font-size: 22px
+    font-weight: normal
+    margin-right: 10px
+    margin-top: 1px
+    content: $icon
+    display: inline-block
+    text-rendering: auto
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+  &.save:before
+    +has-icon("\f14a")
+  &.add:before
+    +has-icon("\f055")
+  &.cancel
+    background-color: darken($neutral, 20%)
+    border-color: darken($neutral, 30%)
+    color: darken($neutral, 60%)
+    &:before
+      +has-icon("\f057")
+
+.toggle-switch
+  +border-radius(10px)
+  $shadow: inset 0 1px 1px #000, 0 1px 0 #fff
+  +box-shadow($shadow)
+  +gradient-vertical(#aaa, #bbb)
+  display: block
+  height: 20px
+  position: relative
+  width: 55px
+  cursor: pointer
+  cursor: hand
+  &.active
+    +gradient-vertical($primary, lighten($primary, 5%))
+  
+  &.inactive
+    text-align: right
+  
+  .text
+    color: #fff
+    display: inline-block
+    font-weight: bold
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5)
+  
+  &.active .text
+    margin-left: 10px
+  
+  &.inactive .text
+    margin-right: 10px
+  
+  .switch
+    +border-radius(10px)
+    $shadow: inset -4px -4px 20px #f4f4f4, inset 1px 1px 1px #fff, 0 1px 3px #444
+    +box-shadow($shadow)
+    background: #ddd
+    content: " "
+    display: inline-block
+    height: 20px
+    position: absolute
+    width: 20px
+  
+  &.active .switch
+    right: 0
+  
+  &.inactive .switch
+    left: 0

@@ -1,0 +1,102 @@
+#title
+  .sub
+    h2
+      margin-top: -9px
+    h3
+      margin-top: -14px
+      color: #CCC
+#docs
+  background-color: #EEE
+  padding: 20px 0px
+  overflow: hidden
+
+  [role='navigation']
+    width: 240px
+    float: left
+    min-height: 1px
+    #nav_header
+      border: solid 1px #DDD
+      background-color: #FFF
+      margin-left: -10px
+      padding-left: 10px
+      border-radius: 5px
+      width: 230px
+      .title
+        &:first-of-type
+          margin-top: -1px
+        font-weight: bold
+        color: #333
+        padding-top: 5px
+        padding-bottom: 5px
+        cursor: pointer
+        border-bottom: solid 1px #DDD
+        border-top: solid 1px #DDD
+        margin-left: -10px
+        padding-left: 10px
+        margin-bottom: -1px
+        .fa
+          color: #999
+          font-size: 12px
+        a
+          text-decoration: none
+          margin-left: 0px
+          color: #333
+      .collapsing
+        display: none
+      .group
+        padding-left: 12px
+        a
+          color: #888
+          text-decoration: none
+          line-height: 25px
+          &.active
+            color: #222
+            font-weight: bold
+        #toc
+          ul
+            list-style: none outside none
+            margin: 0px
+            padding: 0px
+            li
+              &.tocify-item
+                padding-left: 10px
+                text-align: left
+              &.tocify-focus
+                font-weight: bold
+  [role='main']
+    width: 680px
+    float: left
+    min-height: 1px
+    margin-left: 20px
+    .highlight
+      background-color: transparent
+    .edit
+      margin-top: 40px
+      color: #999
+      a
+        color: #999
+        text-decoration: none
+    h1
+      color: $primary
+    .table
+      background-color: #f5f5f5
+    .connector
+      +border-radius(10px)
+      background-color: #FFF
+      border: 2px solid $primary
+      width: 116px
+      height: 116px
+      text-align: center
+      display: inline-block
+      margin: 10px
+      a
+        padding: 10px
+        display: block
+        text-decoration: none
+        .logo
+          display: inline-block
+          width: 70px
+          height: 70px
+        .title
+          font-weight: bold
+          text-decoration: none

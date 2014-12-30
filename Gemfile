@@ -15,3 +15,6 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 
 gem "middleman-syntax"
 gem 'redcarpet'
+
+gem 'bootstrap-sass', require: false
+gem 'therubyracer'

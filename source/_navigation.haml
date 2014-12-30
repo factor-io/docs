@@ -9,7 +9,8 @@
   - categories.each do |category|
     - if !category.blank?
       .title(data-toggle='collapse' data-parent='#nav_header' href='##{to_id(category)}')
-        %i.icon-chevron-right
+        %i.fa.fa-chevron-right
+
         = category
       - any_active = sitemap.resources.any? {|page| current_page.path == page.path && page.metadata[:page]['category'] == category}
       .collapse.group(id="#{to_id(category)}" class="#{'in' if any_active}")
