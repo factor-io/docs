@@ -11,8 +11,11 @@ BitBalloon only requires an API Key (api_key) for the credentials. First, visit 
 
 **credentials.yml**
 
-    bitballoon:
-      api_key: 4686b1488574a768a8a8d
+```yaml
+---
+bitballoon:
+  api_key: 4686b1488574a768a8a8d
+```
 
 
 # bitballoon::deploy
