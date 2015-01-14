@@ -21,7 +21,6 @@
       padding-left: 10px
       border-radius: 5px
       width: 230px
-      overflow: hidden
       .title
         &:first-of-type
           margin-top: -1px
@@ -61,6 +60,11 @@
           color: #888
           text-decoration: none
           line-height: 25px
+          text-overflow: ellipsis
+          white-space: nowrap
+          overflow: hidden
+          width: 100%
+          display: inline-block
           &.active
             color: #222
             font-weight: bold
@@ -69,13 +73,17 @@
             list-style: none outside none
             margin: 0px
             padding: 0px
+
             li
               &.tocify-item
                 padding-left: 10px
                 text-align: left
+                text-overflow: ellipsis
+                white-space: nowrap
               &.tocify-focus
                 a
                   color: #000
+
   [role='main']
     width: 680px
     float: left
