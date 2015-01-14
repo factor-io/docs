@@ -24,9 +24,12 @@ jenkins:
   jobs: wss://open-connectors.factor.io/v0.4/jenkins_job
 ```
 
-# jenkins::job::list
+# Jobs
 
-## Input
+## List Jobs Action
+### jenkins::job::list
+
+### Input
 
 ID | Default | Description
 --- | ------- | -----------
@@ -35,60 +38,65 @@ status | (optional) | The job status to filter by
 
 **Note**: You can provide the filter, status, or neither, but you cannot provide both filter and status. 
 
-# jenkins::job::build
+## Build Job Action
+### jenkins::job::build
 
-## Input
+### Input
 
 ID | Default | Description
 --- | ------- | -----------
 job |  | The Job ID to build
 
-## Output
+### Output
 ```javascript
 {
   code: '200'
 }
 ```
 
-# jenkins::job::stop
+## Stop Job Action
+### jenkins::job::stop
 
-## Input
+### Input
 
 ID | Default | Description
 --- | ------- | -----------
 job |  | The Job ID to stop
 
-## Output
+### Output
 ```javascript
 {
   code: '200'
 }
 ```
 
-# jenkins::job::status
+## Get Job Status Action
+### jenkins::job::status
 
-## Input
+### Input
 
 ID | Default | Description
 --- | ------- | -----------
 job |  | The Job ID to get the status
 
-## Output
+### Output
 ```javascript
 {
   code: '200'
 }
 ```
-# jenkins::job::rename
 
-## Input
+## Rename Job Action
+### jenkins::job::rename
+
+### Input
 
 ID | Default | Description
 --- | ------- | -----------
 job |  | The Job ID to rename
 new_job | | The new Job ID
 
-## Output
+### Output
 ```javascript
 {
   code: '200'

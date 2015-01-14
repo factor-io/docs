@@ -57,12 +57,15 @@ timer: wss://open-connectors.factor.io/v0.4/timer
 web: wss://open-connectors.factor.io/v0.4/web
 ```
 
-# rackspace::compute::list
+# Compute
 
-## Input
+## List Compute Instances Action
+### rackspace::compute::list
+
+### Input
 - **region** (optional, default:'ord'): A string containing the three letter region
 
-## Output
+### Output
 Output is an Array of Hashes. The Factor Server automatically converts this to a nested OStruct, so you can address variables like `servers.first.addresses.public.last.addr`.
 
 ```ruby
@@ -119,7 +122,7 @@ Output is an Array of Hashes. The Factor Server automatically converts this to a
 ]
 ```
 
-## Example
+### Example
 ```ruby
 listen 'github::push', repo:'factor-io/console' do |github_info|
   run 'rackspace::compute::list', region:'dfw' do |servers|
@@ -137,13 +140,15 @@ listen 'github::push', repo:'factor-io/console' do |github_info|
   end
 end
 ```
-# rackspace::compute::get
 
-## Input
+## Get Compute Instance Action
+### rackspace::compute::get
+
+### Input
 - **region** (optional, default:'ord'): A string containing the three letter region
 - **id** (required): This is the server ID for which you want to get details. You can obtain a list of servers from `rackspace::compute::list`.
 
-## Output
+### Output
 Output is a Hash of details for that server. The Factor Server automatically converts this to a nested OStruct, so you can address variables like `server.addresses.public.last.addr`.
 
 ```ruby
@@ -197,16 +202,16 @@ Output is a Hash of details for that server. The Factor Server automatically con
   :config_drive => ""
 }
 ```
-# rackspace::compute::create
+### rackspace::compute::create
 
-## Input
+### Input
 - **region** (optional, default:'ord'): A string containing the three letter region
 - **flavor_id** (required): The Flavor ID you'd like to use for the server. You can get the list of [supported flavors from Rackspace](http://docs.rackspace.com/servers/api/v2/cs-releasenotes/content/supported_flavors.html), or use the `rackspace::flavors::list` action to get a list for a particular region.
 - **image_id** (required): The Image ID you'd like to use for the server. You can get the list of supported images for a region by using the `rackspace::images::list` action. 
 - **name** (required): Optionally give the server a name. If one is not provided Rackspace will assign one.
 - **wait** (optional, default: true): By default this will start the creation process and wait until it is completed (or fails). This can take about 10 minutes to complete, but will be ready to use once complete. By setting 'wait' to false, the creation will run asynchronously and the execution will continue without waiting for the results.
 
-## Output
+### Output
 
 ```ruby
 {
@@ -259,7 +264,7 @@ Output is a Hash of details for that server. The Factor Server automatically con
   :config_drive => ""
 }
 ```
-## Example
+### Example
 
 ```ruby
 listen 'web::hook' do |post_info|
@@ -273,19 +278,20 @@ end
 
 ```
 
-# rackspace::compute::bootstrap
+## Bootstrap Compute Instance Action
+### rackspace::compute::bootstrap
 
-## credentials.yml
+### credentials.yml
 This is the only action which requires the additional SSH public/private key to be specified in the `credentials.yml` file.
 
-## Input
+### Input
 - **region** (optional, default:'ord'): A string containing the three letter region
 - **flavor_id** (required): The Flavor ID you'd like to use for the server. You can get the list of [supported flavors from Rackspace](http://docs.rackspace.com/servers/api/v2/cs-releasenotes/content/supported_flavors.html), or use the `rackspace::flavors::list` action to get a list for a particular region.
 - **image_id** (required): The Image ID you'd like to use for the server. You can get the list of supported images for a region by using the `rackspace::images::list` action. 
 - **name** (required): Optionally give the server a name. If one is not provided Rackspace will assign one.
 - **wait** (optional, default: true): By default this will start the creation process and wait until it is completed (or fails). This can take about 10 minutes to complete, but will be ready to use once complete. By setting 'wait' to false, the creation will run asynchronously and the execution will continue without waiting for the results.
 
-## Output
+### Output
 
 ```ruby
 {
@@ -338,7 +344,7 @@ This is the only action which requires the additional SSH public/private key to 
   :config_drive => ""
 }
 ```
-## Example
+### Example
 
 ```ruby
 listen 'web::hook' do |post_info|
@@ -352,15 +358,15 @@ end
 
 ```
 
-# rackspace::compute::ssh
+### rackspace::compute::ssh
 Use this to run SSH commands on server. You can pass a list of commands and all will be executed in the same SSH session in the order provided, and the respective results will be returned. This requires that an SSH Key was specified in the creation process, otherwise Rackspace can't identify the required SSH key.
 
-## Input
+### Input
 - **region** (optional, default:'ord'): A string containing the three letter region
 - **commands** (required): An array of string containing the commands to run
 - **id** (required): The Server ID of server to execute commands
 
-## Output
+### Output
 ```ruby
 [
   {
@@ -378,7 +384,7 @@ Use this to run SSH commands on server. You can pass a list of commands and all 
 ]
 ```
 
-## Example
+### Example
 
 ```ruby
 listen 'github::push', repo:'factor-io/console' do |github_info|
@@ -398,14 +404,15 @@ listen 'github::push', repo:'factor-io/console' do |github_info|
 end
 ```
 
-# rackspace::compute::delete
+## Delete Compute Instance Action
+### rackspace::compute::delete
 This will delete a server in a region. This executes asynchronously, so it will return before the destruction process is complete.
 
-## Input
+### Input
 - **region** (optional, default:'ord'): A string containing the three letter region
 - **id** (required): This is the server ID for which you want to delete. You can obtain a list of servers from `rackspace::compute::list`.
 
-## Output
+### Output
 Output is a Hash of details for that server. 
 
 ```ruby
@@ -460,23 +467,28 @@ Output is a Hash of details for that server.
 }
 ```
 
-# rackspace::compute::reboot
-## Input
+## Reboot Instance Action
+### rackspace::compute::reboot
+### Input
 - **region** (optional, default:'ord'): A string containing the three letter region
 - **id** (required): This is the server ID for which you want to delete. You can obtain a list of servers from `rackspace::compute::list`.
 
-# rackspace::compute::change_password
+## Change Password Action
+### rackspace::compute::change_password
 
-## Input
+### Input
 - **region** (optional, default:'ord'): A string containing the three letter region
 - **id** (required): This is the server ID for which you want to delete. You can obtain a list of servers from `rackspace::compute::list`.
 - **new_password** (required): New password to use
 
-# rackspace::flavors::list
-## Input
+# Flavors
+
+## List Flavros Action
+### rackspace::flavors::list
+### Input
 - **region** (optional, default:'ord'): A string containing the three letter region
 
-## Output
+### Output
 
 ```ruby
 [
@@ -541,7 +553,7 @@ Output is a Hash of details for that server.
 ]
 ```
 
-### Example
+#### Example
 
 ```ruby
 listen 'hipchat::message', room:'Factor', filter:'rackspace flavors ([a-zA-Z0-1])' do |hipchat|
@@ -553,12 +565,15 @@ listen 'hipchat::message', room:'Factor', filter:'rackspace flavors ([a-zA-Z0-1]
 end
 ```
 
-# rackspace::images::list
+# Images
 
-## Input
+## List Images Action
+### rackspace::images::list
+
+### Input
 - **region** (optional, default:'ord'): A string containing the three letter region
 
-## Output
+### Output
 ```ruby
 [
   {
@@ -645,7 +660,7 @@ end
 ]
 ```
 
-## Example
+### Example
 
 ```ruby
 listen 'hipchat::message', room:'Factor', filter:'rackspace images ([a-zA-Z0-1])' do |hipchat|
@@ -657,14 +672,15 @@ listen 'hipchat::message', room:'Factor', filter:'rackspace images ([a-zA-Z0-1])
 end
 ```
 
-# rackspace::loadbalancer::list
+## List Load Balancers Action
+### rackspace::loadbalancer::list
 
-## Input
+### Input
 ID | default | Description
 --- | -------- | -----------
 region | 'ord' | A string containing the three letter region
 
-## Output
+### Output
 ```ruby
 [
  {
@@ -682,15 +698,18 @@ region | 'ord' | A string containing the three letter region
 ]
 ```
 
-# rackspace::loadbalancer::get
+# Load Balancers
 
-## Input
+## Get Load Balancer Action
+### rackspace::loadbalancer::get
+
+### Input
 ID | default | Description
 --- | -------- | -----------
 region | 'ord' | A string containing the three letter region
 id | false | The Load Balancer ID
 
-## Output
+### Output
 ```ruby
 {
   "name": "console",
@@ -736,18 +755,19 @@ id | false | The Load Balancer ID
 }
 ```
 
-# rackspace::loadbalancer::delete
+## Delete Load Balancer
+### rackspace::loadbalancer::delete
 
-## Input
+### Input
 ID | default | Description
 --- | -------- | -----------
 region | 'ord' | A string containing the three letter region
 id | false | The Load Balancer ID
 
+## Create Load Balancer
+### rackspace::loadbalancer::create
 
-# rackspace::loadbalancer::create
-
-## Input
+### Input
 ID | default | Description
 --- | -------- | -----------
 region | 'ord' | A string containing the three letter region
@@ -759,9 +779,9 @@ ip_type | 'PUBLIC' | Virtual IP Type. When your resources reside in the same reg
 algorithm | 'RANDOM' | Algorithm to use for route distribution.
 wait | false | Should the call wait until the load balancer is created (or failed), or continue the workflow while this executes async. If subsequent code depends on this being live, then use 'true'.
 
-
-# rackspace::loadbalancer::add_node
-## Input
+## Add Node to Load Balancer Action
+### rackspace::loadbalancer::add_node
+### Input
 ID | default | Description
 --- | -------- | -----------
 region | 'ord' | A string containing the three letter region
@@ -770,9 +790,10 @@ address |  | The host address, no port, scheme, or path
 port | 80 | The TCP/IP Port to use
 condition | 'ENABLED' | State of the node. Likely want to keep the default here.
 
-# rackspace::loadbalancer::remove_node
+## Remove Node from Load Balancer Action
+### rackspace::loadbalancer::remove_node
 
-## Input
+### Input
 
 ID | default | Description
 --- | -------- | -----------
@@ -780,16 +801,16 @@ region | 'ord' | A string containing the three letter region
 load_balancer_id |  | The Load Balancer ID
 id |  | Node ID
 
+## List Load Balancer Nodes Action
+### rackspace::loadbalancer::nodes
 
-# rackspace::loadbalancer::nodes
-
-## Input
+### Input
 ID | default | Description
 --- | -------- | -----------
 region | 'ord' | A string containing the three letter region
 id |  | The Load Balancer ID
 
-## Output
+### Output
 
 ```ruby
 [

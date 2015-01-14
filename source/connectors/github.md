@@ -6,10 +6,12 @@ logo: https://factor.io/assets/channel_logos/github.png
 # Authentication
 Github requires an API Key (api_key) to be defined in your credentials.yml file. To get the API key go to your [Application Settings page in Github](https://github.com/settings/applications) and use the "Generate new token" button in the Personal access tokens section to generate a new token. Copy the new key and paste it into your credentials.yml file.
 
-**credentials.yml**
+### credentials.yml
 
-    github:
-      api_key: 4686b1488574a768a8a8d
+```yaml
+github:
+  api_key: 4686b1488574a768a8a8d
+```
 
 # Parameters
 All of the listeners below require the same set of parameters
@@ -18,10 +20,13 @@ ID | Default | Description
 --- | --- | ---
 repo | | The address of the repo in the format (user/repo#branch). The use rand repo in the format are required while the branch is optional. If the branch is not specified it will default to `master`. For example `skierkowski/hello` would refer to https://github.com/skierkowski/hello and `skierkowski/hello#new-feature-3` references the new-feature-3 branch.
 
-# github::commit_comment
-The Commit Comment Listener (`github::commit_comment`) is triggered when a commit comment is created. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#commitcommentevent).
+# Repositories
 
-## Example
+## Commit Commet Listener
+### github::repo::commit_comment
+The Commit Comment Listener (`github::repo::commit_comment`) is triggered when a commit comment is created. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#commitcommentevent).
+
+### Example
 
 ```ruby
 listen 'github::commit_comment', repo:'skierkowski/hello' do |comment|
@@ -29,10 +34,11 @@ listen 'github::commit_comment', repo:'skierkowski/hello' do |comment|
 end
 ```
 
-# github::create
-The Create Listener (`github::create`) listeners for the creation of new branches, or tags. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#createevent).
+## Create Listener
+### github::repo::create
+The Create Listener (`github::repo::create`) listeners for the creation of new branches, or tags. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#createevent).
 
-## Example
+### Example
 
 ```ruby
 listen 'github::create', repo:'skierkowski/hello' do |create_event|
@@ -44,10 +50,11 @@ listen 'github::create', repo:'skierkowski/hello' do |create_event|
 end
 ```
 
-# github::delete
-The Delete Listener (`github::delete`) listeners for the deleting of new branches, or tags. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#deleteevent).
+## Delete Listener
+### github::repo::delete
+The Delete Listener (`github::repo::delete`) listeners for the deleting of new branches, or tags. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#deleteevent).
 
-## Example
+### Example
 
 ```ruby
 listen 'github::delete', repo:'skierkowski/hello' do |delete_event|
@@ -59,10 +66,11 @@ listen 'github::delete', repo:'skierkowski/hello' do |delete_event|
 end
 ```
 
-# github::deployment
-The Deployment Listener (`github::deployment`) is triggered on new deployments. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#deployevent).
+## Deployment Listener
+### github::repo::deployment
+The Deployment Listener (`github::repo::deployment`) is triggered on new deployments. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#deployevent).
 
-## Example
+### Example
 
 ```ruby
 listen 'github::deployment', repo:'skierkowski/hello' do |deploy|
@@ -70,21 +78,22 @@ listen 'github::deployment', repo:'skierkowski/hello' do |deploy|
 end
 ```
 
-# github::deployment_status
-The Deployment Status Listener (`github::deployment_status`) is triggered when the status of a deployment changes. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#deploymentstatusevent).
+## Deployment Status Listener
+### github::repo::deployment_status
+The Deployment Status Listener (`github::repo::deployment_status`) is triggered when the status of a deployment changes. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#deploymentstatusevent).
 
-## Example
+### Example
 
 ```ruby
 listen 'github::deployment_status', repo:'skierkowski/hello' do |deploy|
   info "The #{deploy.name}/#{deploy.ref} deployment status changed to #{deploy.status} for the deployment to the #{deploy.deployment.environment} environment"
 end
 ```
+## Download Listener
+### github::repo::download
+The Download Listener (`github::repo::download`) is triggered when a download is created. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#downloadevent).
 
-# github::download
-The Download Listener (`github::download`) is triggered when a download is created. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#downloadevent).
-
-## Example
+### Example
 
 ```ruby
 listen 'github::download', repo:'skierkowski/hello'
@@ -92,10 +101,11 @@ listen 'github::download', repo:'skierkowski/hello'
 end
 ```
 
-# github::fork
-The Fork Listener (`github::fork`) is triggered when the repo is forked. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#forkevent).
+## Fork Listener
+### github::repo::fork
+The Fork Listener (`github::repo::fork`) is triggered when the repo is forked. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#forkevent).
 
-## Example
+### Example
 
 ```ruby
 listen 'github::fork', repo:'skierkowski/hello' do |fork|
@@ -103,10 +113,11 @@ listen 'github::fork', repo:'skierkowski/hello' do |fork|
 end
 ```
 
-# github::gollum
-The Gollum Listener (`github::gollum`) is triggered when a Wiki page is created or updated. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#gollumevent).
+## Gollum Listener
+### github::repo::gollum
+The Gollum Listener (`github::repo::gollum`) is triggered when a Wiki page is created or updated. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#gollumevent).
 
-## Example
+### Example
 
 ```ruby
 listen 'github::gollum', repo:'skierkowski/hello' do |wiki|
@@ -114,41 +125,44 @@ listen 'github::gollum', repo:'skierkowski/hello' do |wiki|
 end
 ```
 
-# github::issue_comment
-The Issue Comment Listener (`github::issue_comment`) is triggered when an issue comment is created. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#issuecommentevent).
+## Comment Listener
+### github::repo::issue_comment
+The Issue Comment Listener (`github::repo::issue_comment`) is triggered when an issue comment is created. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#issuecommentevent).
 
-## Example
+### Example
 ```ruby
 listen 'github::issue_comment', repo:'skierkowski/hello' do |comment|
   info "#{comment.sender.login} #{comment.action} a comment on issue #{comment.issue.title} with `#{comment.comment.body}`"
 end
 ```
 
-# github::issues
-The Issues Listener (`github::issues`) is triggered when an issue is assigned, unassigned, labeled, unlabeled, opened, closed, or reoponed. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#issuesevent).
+## Issue Listener
+### github::repo::issues
+The Issues Listener (`github::repo::issues`) is triggered when an issue is assigned, unassigned, labeled, unlabeled, opened, closed, or reoponed. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#issuesevent).
 
-## Example
+### Example
 ```ruby
 listen 'github::issues', repo:'skierkowski/hello' do |issue|
   info "#{issue.sender.login} #{issue.action} an issue titled #{issue.title}"
 end
 ```
 
-# github::member
-The Member Listener (`github::member`) is triggered when a user is added as a collaborator to a repository. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#memberevent).
+## Member Listenr
+### github::repo::member
+The Member Listener (`github::repo::member`) is triggered when a user is added as a collaborator to a repository. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#memberevent).
 
-## Example
+### Example
 ```ruby
 listen 'github::member', repo:'skierkowski/hello' do |issue|
   info "#{member.login} was #{action} to the repo #{issue.repository.full_name}"
 end
 ```
 
+## Page Build Listener
+### github::repo::page_build
+The Page Build Listener (`github::repo::page_build`) is triggered when an attempt is made to build a Github Page site, whether successful or not. This is triggered on push to a Github Pages enabled branch, either `gh-pages` for project pages, or `master` for user/organization pages. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#pagebuildevent).
 
-# github::page_build
-The Page Build Listener (`github::page_build`) is triggered when an attempt is made to build a Github Page site, whether successful or not. This is triggered on push to a Github Pages enabled branch, either `gh-pages` for project pages, or `master` for user/organization pages. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#pagebuildevent).
-
-## Example
+### Example
 ```ruby
 listen 'github::page_build', repo:'skierkowski/hello' do |page|
   if page.build.status == 'built'
@@ -159,21 +173,22 @@ listen 'github::page_build', repo:'skierkowski/hello' do |page|
 end
 ```
 
+## Public Flag Listener
+### github::repo::public
+The Public Listener (`github::repo::public`) is triggered when a repo is open sourced. We need more of these. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#publicevent).
 
-# github::public
-The Public Listener (`github::public`) is triggered when a repo is open sourced. We need more of these. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#publicevent).
-
-## Example
+### Example
 ```ruby
 listen 'github::public', repo: 'factor-io/factor' do |repo|
   success "Yey, we went open source!"
 end
 ```
 
-# github::pull_request
-The Pull Request Listener (`github::pull_request`) is triggered when a pull request is assigned, unassigned, labeled, unlabeled, opened, closed, reopened, or synchronized. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#pullrequestevent).
+## Pull Request Listener
+### github::repo::pull_request
+The Pull Request Listener (`github::repo::pull_request`) is triggered when a pull request is assigned, unassigned, labeled, unlabeled, opened, closed, reopened, or synchronized. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#pullrequestevent).
 
-## Example
+### Example
 ```ruby
 listen 'github::pull_request', repo:'skierkowski/hello' do |request|
   msg = "Pull request #{request.number} was #{request.action}: #{request.pull_request.title}"
@@ -181,21 +196,22 @@ listen 'github::pull_request', repo:'skierkowski/hello' do |request|
 end
 ```
 
+## Pull Request Review Comment Listener
+### github::repo::pull_request_review_comment
+The Pull Request Review Comment Listener (`github::repo::pull_request_review_comment`) is triggered when a comment is created on a portion of the unified diff of a pull request. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#pullrequestreviewcommentevent).
 
-# github::pull_request_review_comment
-The Pull Request Review Comment Listener (`github::pull_request_review_comment`) is triggered when a comment is created on a portion of the unified diff of a pull request. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#pullrequestreviewcommentevent).
-
-## Example
+### Example
 ```ruby
 listen 'github::pull_request_review_comment', repo:'skierkowski/hello' do |comment|
   info "#{comment.sender.login} #{comment.action} commented #{comment.comment.body} on #{comment.repository.full_name}"
 end
 ```
 
-# github::push
-The Push Listener (`github::push`) is triggered when a repository branch is pushed to. This is the most used listener as it is often used to invoke deployments when code is pushed or merged into the master branch. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#pushevent).
+## Push Listener
+### github::repo::push
+The Push Listener (`github::repo::push`) is triggered when a repository branch is pushed to. This is the most used listener as it is often used to invoke deployments when code is pushed or merged into the master branch. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#pushevent).
 
-## Example
+### Example
 ```ruby
 listen 'github::push', repo:'skierkowski/hello#master' do |github_info|
   run 'heroku::deploy', app:'hello-frank', content:github_info.content do |deploy_info|
@@ -204,30 +220,32 @@ listen 'github::push', repo:'skierkowski/hello#master' do |github_info|
 end
 ```
 
-# github::release
-The Release Listener (`github::release`) is triggered when a release is published. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#releaseevent).
+## Release Listener
+### github::repo::release
+The Release Listener (`github::repo::release`) is triggered when a release is published. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#releaseevent).
 
-## Example
+### Example
 ```ruby
 listen 'github::release', repo:'skierkowski/hello#master' do |release|
   info "Release #{release.release.tag_name} was #{release.action}"
 end
 ```
+## Status Listener
+### github::repo::status
+The Status Listener (`github::repo::status`) is triggered when the status of a git commit changes. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#statusevent).
 
-# github::status
-The Status Listener (`github::status`) is triggered when the status of a git commit changes. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#statusevent).
-
-## Example
+### Example
 ```ruby
 listen 'github::status', repo:'skierkowski/hello' do |status|
   info "Commit #{status.commit.message} was a #{status.state}"
 end
 ```
 
-# github::team_add
-The Team Add listener (`github::team_add`) is triggered when a user or repository is added to a team. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#teamaddevent).
+## Team Add Listener
+### github::repo::team_add
+The Team Add listener (`github::repo::team_add`) is triggered when a user or repository is added to a team. The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#teamaddevent).
 
-## Example
+### Example
 ```ruby
 listen 'github::team_add', repo:'skierkowski/hello' do |add_info|
   if add_info.team
@@ -238,13 +256,67 @@ listen 'github::team_add', repo:'skierkowski/hello' do |add_info|
 end
 ```
 
-# github::watch
-The Watch Listener (`github::watch`) is triggered when a user Stars a repository (not watches). The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#watchevent).
+## Watch Listener
+### github::repo::watch
+The Watch Listener (`github::repo::watch`) is triggered when a user Stars a repository (not watches). The details of the returned output can be found [here](https://developer.github.com/v3/activity/events/types/#watchevent).
 
-## Example
+### Example
 ```ruby
 listen 'github::watch', repo:'skierkowski/hello' do |watch|
   info "#{watch.sender.login} #{watch.action} repo #{watch.repository.full_name}"
 end
 ```
+
+# Deployments
+
+## List Deployments Action
+### github::deployments::list
+
+## Create Deployment Action
+### github::deployments::create
+
+## List Deployment Statuses Action
+### github::deployments::statuses
+
+## Create Deployment Status Action
+### github::deployments::create_status
+
+# Issues
+
+## List Issues Action
+### github::issues::list
+
+## Get Issue Action
+### github::issues::get
+
+## Create Issue Action
+### github::issues::create
+
+## Edit Issue Action
+### github::issues::edit
+
+## Close Issue Action
+### github::issues::close
+
+# Releases
+
+## List Releases Action
+### github::releases::list
+
+## Get Release Action
+### github::releases::get
+
+## Create Release Action
+### github::releases::create
+
+## Delete Relase Action
+### github::releases::delete
+
+# Statuses
+
+## List Statuses Action
+### github::statuses::list
+
+## Creat Statuses Action
+### github::statuses::create
 
