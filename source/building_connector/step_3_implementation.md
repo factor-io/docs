@@ -51,19 +51,19 @@ end
 
 You'll notice a number of functions which are unique to this implementation. These are the methods that come from the [Connector API](https://github.com/factor-io/connector-api).
 
-## Factor::Connector.service
+# Factor::Connector.service
 This is the primary method which defines the service. The first parameter is the name of the service we want to use. In this case we are defining `mailgun_messages`. This must match the name of the file, in this case this must be `mailgun_messages.rb`. Secondly, for consistency, it should be located in `/lib/factor/connector/` path.
 
 Other than the first parameter, you'll notice that everything else is placed inside of the main block.
 
-## action
+# action
 The `action` method defines the action you want to make available. In this case we call it `send`. Inside the block it takes a |params| option, which  includes all the parameters passed from the Factor.io Runtime. Inside this block we will define the code to perform the work of sending a email message using Mailgun.
 
-## info, warn, error
+# info, warn, error
 There are three methods, `info`, `warn`, `error` you can use in your code to log output. These are just for information purposes, so the code will continue to execute.
 
-## fail
+# fail
 The fail method is like throwing an exception. It will immediately stop execution of this connector, and the workflow using this connector. Use this for validating user input from of the params.
 
-## action_callback
+# action_callback
 Once you complete the work you have to return the results using `action_callback`. This returns any contents you want to pass back to the workflow. In this case we want to send the message response from Mailgun. This must be an Array or Hash.
