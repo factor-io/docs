@@ -1,5 +1,5 @@
 ---
-title: Pivotal Tracker
+title: PivotalTracker
 category: Connectors
 connector_type: Project Management
 status: incomplete
