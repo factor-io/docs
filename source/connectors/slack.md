@@ -1,7 +1,7 @@
 ---
 title: Slack
 category: Connectors
-connector_type: Communication
+connector_type: Chat
 status: revise
 logo: https://raw.githubusercontent.com/factor-io/connector-slack/master/logo.png
 ---
