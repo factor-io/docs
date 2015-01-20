@@ -1,6 +1,7 @@
 ---
 title: Rackspace
 category: Connectors
+connector_type: Hosting
 logo: https://factor.io/assets/channel_logos/rackspace.png
 ---
 # Authentication

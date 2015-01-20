@@ -7,9 +7,30 @@ order: 1
 :markdown
   These are the currently available Connectors. If you don't see one you would like, email [support@factor.io](mailto:support@factor.io), or [learn how to implement your own](/guides/build_custom_connectors.html).
 
+- connector_types = sitemap.resources.select{|p| p.metadata[:page]['connector_type']}.uniq
+- category_descriptions = {}
+- category_descriptions['Hosting']                  = "Infrastructure and Platform as a Service providers and static hosting services"
+- category_descriptions['Configuration Management'] = "Chef, Puppet, Ansible, Salt Stack (coming soon)"
+- category_descriptions['Continuous Integration']   = "Run your tests automatically"
+- category_descriptions['Source Code Management']   = "Code repositories like Github and Bitbucket"
+- category_descriptions['Fundamental']              = "Basic building blocks like web calls, hooks, and timers"
+- category_descriptions['Alerting & Monitoring']    = "Monitor your servers and get alerts"
+- category_descriptions['Communication']            = "Chat, Notifications"
+- category_descriptions['Email']                    = "Send & Receive Emails. And even kick-off workflows from emails."
+- category_descriptions['Project Management']       = "Project, Issue & Bug tracking"
+- category_descriptions['Remote Operations']        = "Run commands remotely or tweak files"
+
+
 - connectors = sitemap.resources.select{|p|p.metadata[:page]['category']=='Connectors' && p.metadata[:page]['logo'] && p.metadata[:page]['title']}.sort_by{|p| p.metadata[:page]['title']}
-- connectors.each do |connector|
-  .connector
-    %a(href="/#{connector.path}")
-      %img.logo(src="#{connector.metadata[:page]['logo']}")
-      .title= connector.metadata[:page]['title']
+
+- category_descriptions.sort_by{|k,v| k}.to_h.each do |connector_type, description|
+  .connector-category
+    .category
+      .title= connector_type
+      .sub= description
+    .connectors
+      - connectors.group_by {|p| p.metadata[:page]['connector_type']}[connector_type].each do |connector|
+        .connector
+          %a(href="/#{connector.path}")
+            %img.logo(src="#{connector.metadata[:page]['logo']}")
+            .title= connector.metadata[:page]['title']

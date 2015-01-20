@@ -1,6 +1,7 @@
 ---
 title: Chef
 category: Connectors
+connector_type: Configuration Management
 logo: https://raw.githubusercontent.com/factor-io/connector-chef/master/logo.png
 ---
 This Chef Connector enables you to bootstrap a server using both Chef Server and Hosted Chef, but not Chef Solo.

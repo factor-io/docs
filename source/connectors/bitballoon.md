@@ -1,6 +1,7 @@
 ---
 title: BitBalloon
 category: Connectors
+connector_type: Hosting
 status: revise
 logo: https://factor.io/assets/channel_logos/bitballoon.png
 ---

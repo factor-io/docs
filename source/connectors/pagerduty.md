@@ -1,6 +1,7 @@
 ---
 title: PagerDuty
 category: Connectors
+connector_type: Alerting & Monitoring
 status: incomplete
 logo: https://raw.githubusercontent.com/factor-io/connector-pagerduty/master/logo.png
 ---

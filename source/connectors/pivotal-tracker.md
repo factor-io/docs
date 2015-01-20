@@ -1,6 +1,7 @@
 ---
 title: PivotalTracker
 category: Connectors
+connector_type: Project Management
 status: incomplete
 logo: https://raw.githubusercontent.com/factor-io/connector-pivotal/master/logo.png
 ---

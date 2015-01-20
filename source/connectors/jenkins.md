@@ -1,6 +1,7 @@
 ---
 title: Jenkins
 category: Connectors
+connector_type: Continuous Integration
 status: incomplete
 logo: https://factor.io/assets/channel_logos/jenkins.png
 ---

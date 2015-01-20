@@ -1,6 +1,7 @@
 ---
 title: Github
 category: Connectors
+connector_type: Source Code Management
 logo: https://factor.io/assets/channel_logos/github.png
 ---
 # Authentication

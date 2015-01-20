@@ -1,6 +1,7 @@
 ---
 title: Tutum
 category: Connectors
+connector_type: Hosting
 status: incomplete
 logo: https://raw.githubusercontent.com/factor-io/connector-tutum/master/logo.png
 ---

@@ -1,6 +1,7 @@
 ---
 title: Heroku
 category: Connectors
+connector_type: Hosting
 logo: https://factor.io/assets/channel_logos/heroku.png
 ---
 # Authentication

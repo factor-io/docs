@@ -111,23 +111,47 @@
         
     .table
       background-color: #f5f5f5
-    .connector
-      +border-radius(10px)
-      background-color: #FFF
-      border: 2px solid $primary
-      width: 116px
-      height: 116px
-      text-align: center
-      display: inline-block
-      margin: 10px
-      a
-        padding: 10px
-        display: block
-        text-decoration: none
-        .logo
-          display: inline-block
-          width: 70px
-          height: 70px
+    .connector-category
+      border-top: solid 1px #FFF
+      border-bottom: solid 1px #DDD
+      overflow: hidden
+      padding-top: 20px
+      padding-bottom: 20px
+      &:first-of-type
+        border-top: none
+      &:last-of-type
+        border-bottom: none
+      .category
+        float: left
+        width: 150px
+        margin-top: 10px
         .title
-          font-weight: bold
-          text-decoration: none
+          color: $primary
+          font-size: 20px
+        .sub
+          margin-top: 5px
+          color: #888
+      .connectors
+        float: left
+        width: 530px
+        .connector
+          +border-radius(10px)
+          background-color: #FFF
+          border: 2px solid $primary
+          width: 116px
+          height: 116px
+          text-align: center
+          display: inline-block
+          margin: 10px
+          a
+            padding: 10px
+            display: block
+            text-decoration: none
+            .logo
+              display: inline-block
+              width: 70px
+              height: 70px
+            .title
+              font-weight: bold
+              text-decoration: none
+              margin: 0 auto

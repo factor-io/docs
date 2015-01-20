@@ -1,6 +1,7 @@
 ---
 title: Travis
 category: Connectors
+connector_type: Continuous Integration
 logo: https://raw.githubusercontent.com/factor-io/connector-travis/master/logo.png
 ---
 # Authentication

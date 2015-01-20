@@ -1,6 +1,7 @@
 ---
 title: Trello
 category: Connectors
+connector_type: Project Management
 status: incomplete
 logo: https://factor.io/assets/channel_logos/trello.png
 ---

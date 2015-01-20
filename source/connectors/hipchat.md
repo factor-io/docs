@@ -1,6 +1,7 @@
 ---
 title: Hipchat
 category: Connectors
+connector_type: Communication
 logo: https://factor.io/assets/channel_logos/hipchat.png
 ---
 # Authentication
