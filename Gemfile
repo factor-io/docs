@@ -13,8 +13,8 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 # Windows does not come with time zone data
 gem "tzinfo-data", platforms: [:mswin, :mingw]
 
-gem "middleman-syntax"
-gem 'redcarpet'
+gem "middleman-syntax", '~> 2.0.0'
+gem 'redcarpet', '~> 3.2.0'
 
 gem 'bootstrap-sass', require: false
 gem 'therubyracer'
