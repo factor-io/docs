@@ -2,32 +2,24 @@
 title: Jenkins
 category: Connectors
 connector_type: Continuous Integration
-status: incomplete
 logo: https://factor.io/assets/channel_logos/jenkins.png
 ---
 # Authentication
 
-You must provide the username, password, and host to access the Jenkins server
+You must provide the username, password, and host to access the Jenkins server using a fully qualified domain name.
 
-## credentials.yml
+**credentials.yml**
+
 ```yaml
 ---
 jenkins:
-  username: skierkowski
-  password: password
-  host: jenkins.factor.io
+  host: http://skierkowski:password@jenkins.factor.io
 ```
 
-## connectors.yml
-```yaml
----
-jenkins:
-  jobs: wss://open-connectors.factor.io/v0.4/jenkins_job
-```
 
 # Jobs
 
-## List Jobs Action
+## List all jobs
 ### jenkins::job::list
 
 ### Input
@@ -39,8 +31,9 @@ status | (optional) | The job status to filter by
 
 **Note**: You can provide the filter, status, or neither, but you cannot provide both filter and status. 
 
-## Build Job Action
+## Build a Job
 ### jenkins::job::build
+This will build an existing job and wait until the build is complete (success or failure).
 
 ### Input
 
@@ -49,30 +42,18 @@ ID | Default | Description
 job |  | The Job ID to build
 
 ### Output
-```javascript
-{
-  code: '200'
-}
-```
+ID | Description
+--- | ---
+build_number | The Build ID
+status | Status of the build after the build complete
+console[n].output | Text output of the console for the build
+console[n].size | The size of the console output
+console[n].more | Link to more content
 
-## Stop Job Action
-### jenkins::job::stop
 
-### Input
-
-ID | Default | Description
---- | ------- | -----------
-job |  | The Job ID to stop
-
-### Output
-```javascript
-{
-  code: '200'
-}
-```
-
-## Get Job Status Action
+## Get a Job Status
 ### jenkins::job::status
+The job status returns the build status of the last build.
 
 ### Input
 
@@ -81,25 +62,7 @@ ID | Default | Description
 job |  | The Job ID to get the status
 
 ### Output
-```javascript
-{
-  code: '200'
-}
-```
 
-## Rename Job Action
-### jenkins::job::rename
-
-### Input
-
-ID | Default | Description
---- | ------- | -----------
-job |  | The Job ID to rename
-new_job | | The new Job ID
-
-### Output
-```javascript
-{
-  code: '200'
-}
-```
+ID | Description
+--- | ---
+status | The string value of the last build status (e.g. 'success')
