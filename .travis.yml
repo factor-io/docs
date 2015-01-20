@@ -7,7 +7,7 @@ branches:
 install:
   - bundle install
 script:
-  - bundle exec middleman build
+  - bundle exec middleman build --verbose
 deploy:
   provider: s3
   access_key_id: AKIAINGWPC5AK4TBL4FA
