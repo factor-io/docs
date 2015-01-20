@@ -2,7 +2,6 @@
 title: BitBalloon
 category: Connectors
 connector_type: Hosting
-status: revise
 logo: https://factor.io/assets/channel_logos/bitballoon.png
 ---
 [BitBalloon](https://www.bitballoon.com/) is a static site hosting service. Factor.io provides a way to deploy static files to your site hosted on BitBalloon.
@@ -18,8 +17,8 @@ bitballoon:
   api_key: 4686b1488574a768a8a8d
 ```
 
-
-# bitballoon::deploy
+# Deploy
+## bitballoon::deploy
 The deploy action (`bitballoon::deploy`) provides the means of uploading your full static site to BitBalloon.
 
 
@@ -27,21 +26,16 @@ The deploy action (`bitballoon::deploy`) provides the means of uploading your fu
 
 ID | Default | Description
 --- | --- | ---
-site | | This is the GUID of your site. When you deploy your application from the command line, the BitBalloon CLI will generate a .bitballoon file in that directory. You can find the site ID in that file.
-content | | This is a reference to the files to be uploaded. Other actions like github::push, github::download, ssh::download will generate a reference to these files.
+site | (required) | This is the GUID of your site. When you deploy your application from the command line, the BitBalloon CLI will generate a .bitballoon file in that directory. You can find the site ID in that file.
+content | (required) | This is a reference to the files to be uploaded. Other actions like github::push, github::download, ssh::download will generate a reference to these files.
 
 ## Example
-This example will wait for a git push in github, then upload it, build it, and download it from an SSH server. Once complete, it 
+This example will wait for a `git push` in Github, then upload it to BitBaloon. 
 
 ```ruby
-listen 'github::push', repo:'skierkowski/hello' do |repo_info|
-  host = 'ubuntu@sandbox.factor.io'
-  run 'ssh::upload', content:repo_info.content, path:'~/web', host:host
-    run 'ssh::execute', commands:['middleman build ~/web'], host:host do |build_info|
-      run 'ssh::download', path:'~/web/build', host:host do |download_info|
-        run 'bitballoon::deploy', site:'foo.com', content:download_info.content
-      end
-    end
+listen 'github::push', repo:'skierkowski/hello' do |repo|
+  run 'bitballoon::deploy', site:'foo.com', content:repo.content do |deploy|
+    success "Bitballoon finished deploying"
   end
 end
 ```
