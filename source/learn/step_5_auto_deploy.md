@@ -31,7 +31,7 @@ For this tutorial we are going to deploy a basic Sinatra-based web application. 
 
 Wherever you see `skierkowski/hello` replace it with your own Github repo.
 
-You will also want to first deploy this application so it is created in Heroku. In this sampel we use `hello-frank`, but you'll also want to use your own value.
+You will also want to first deploy this application so it is created in Heroku. In this sample we use `hello-frank`, but you'll also want to use your own value.
 
 # Start the workflow
 From the working directory start `factor s`.
@@ -66,5 +66,5 @@ You'll notice a few things here:
 # Run a deployment
 Now that the workflow is started (listening), and we have the web hook registered, let's perform a deployment.
 
-In Github change the contents of your file
+In Github change the contents of your file.
 

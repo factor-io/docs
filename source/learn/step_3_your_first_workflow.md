@@ -62,7 +62,7 @@ run 'web::post', url: 'http://requestb.in/1h15g3i1' do |post_info|
   info 'post complete'
 end
 ```
-This should look familiar. As you can see we use `run` to call a specific action, in this case `web::post` with the `url` parameter. As you can see, both `run` and `listen` use the same pattern as the first option is the referene to our connector + action/event, the following parameters are the options to pass to that action/listener, followed by a new block of code.
+This should look familiar. As you can see we use `run` to call a specific action, in this case `web::post` with the `url` parameter. As you can see, both `run` and `listen` use the same pattern as the first option is the reference to our connector + action/event, the following parameters are the options to pass to that action/listener, followed by a new block of code.
 
 The `run` action will execute the work one time, once the work is complete it returns some information and calls the inside block. 
 
