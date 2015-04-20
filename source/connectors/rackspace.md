@@ -2,7 +2,7 @@
 title: Rackspace
 category: Connectors
 connector_type: Hosting
-logo: https://factor.io/assets/channel_logos/rackspace.png
+logo: https://raw.githubusercontent.com/factor-io/connector-rackspace/master/logo.png
 ---
 # Authentication
 Rackspace requires a username, API Key, and for certain actions an SSH Key. To obtain your Username and API Key go to the **[Cloud Control Panel](https://mycloud.rackspace.com/)** > **Account Settings**. There you will find "Username" and "API Key" information.
