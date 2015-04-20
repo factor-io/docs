@@ -2,7 +2,7 @@
 title: Hipchat
 category: Connectors
 connector_type: Chat
-logo: https://factor.io/assets/channel_logos/hipchat.png
+logo: https://raw.githubusercontent.com/factor-io/connector-hipchat/master/hipchat.png
 ---
 # Authentication
 Hipchat requires a personal API Key. This key can be found under Account Settings > API Access when you login to your account. You need to get the API Key from the page and place it in your credentials.yml file.

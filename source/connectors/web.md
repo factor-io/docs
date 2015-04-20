@@ -2,7 +2,7 @@
 title: Web
 category: Connectors
 connector_type: Fundamental
-logo: https://factor.io/assets/channel_logos/web.png
+logo: https://raw.githubusercontent.com/factor-io/connector-web/master/logo.png
 ---
 This connector enables you to create webhooks and call web services using POST, GET, PUT, DELETE HTTP Actions.
 

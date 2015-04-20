@@ -2,7 +2,7 @@
 title: Timer
 category: Connectors
 connector_type: Fundamental
-logo: https://factor.io/assets/channel_logos/timer.png
+logo: https://raw.githubusercontent.com/factor-io/connector-timer/master/logo.png
 ---
 The Timer connector can be used to schedule periodic events either through a crontab or by a period.
 

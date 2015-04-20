@@ -2,7 +2,7 @@
 title: Jenkins
 category: Connectors
 connector_type: Continuous Integration
-logo: https://factor.io/assets/channel_logos/jenkins.png
+logo: https://raw.githubusercontent.com/factor-io/connector-jenkins/master/logo.png
 ---
 # Authentication
 
