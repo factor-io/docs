@@ -2,7 +2,7 @@
 title: SSH
 category: Connectors
 connector_type: Remote Operations
-logo: https://factor.io/assets/channel_logos/ssh.png
+logo: https://raw.githubusercontent.com/factor-io/connector-ssh/master/logo.png
 ---
 The SSH Connector enables you to execute commands on an SSH server or upload files via SCP.
 
